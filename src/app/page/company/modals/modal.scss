@@ -1,0 +1,86 @@
+::ng-deep .modal-dialog {
+  max-width: 80%;
+  width: 80%;
+}
+
+::ng-deep .ass-modal .modal-dialog {
+  max-width: 28%;
+  width: 28%;
+}
+
+.final-radio-wrap {
+  display: inline-block;
+  height: 14px;
+  width: 80px;
+  position: relative;
+  background: url(../../../../assets/img/arrow.png) no-repeat 0 50%;
+  background-size: 100%;
+}
+
+.final-radio-wrap > span {
+  color: #128bed;
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 50%;
+}
+
+.relation {
+  font-size: 15px;
+  color: rgba(0, 0, 0, .65);
+}
+
+.info {
+  position: absolute;
+  top: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.legend {
+  width: 100%;
+  padding: 0 0;
+  margin-top: 5px;
+}
+
+.legend .person-block {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #80c3a8;
+  border-radius: 3px;
+}
+
+.legend .person-text {
+  font-size: 12px;
+  color: #333333;
+}
+
+.legend .ent-block {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #bc9ed3;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.legend .ent-text {
+  font-size: 12px;
+  color: #333333;
+}
+
+.legend .big-block {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ef6a6a;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.legend .big-text {
+  font-size: 12px;
+  color: #333333;
+}

@@ -1,0 +1,39 @@
+<mat-card style="box-shadow: none;" class="card rounded-0">
+  <div class="d-flex border-bottom">
+    <div class="d-flex">
+      <a class="text-center align-self-center f-14 px-3 py-2 message_content" style="border-right: none;"
+         [class.active]="k==0" (click)="k=0">系统消息</a>
+      <a class="text-center align-self-center f-14 px-3 py-2 message_content" [class.active]="k==1"
+         (click)="k=1">个人通知</a>
+    </div>
+    <!--<button class="ml-auto btn btn-outline-info mb-1 btn-sm"><i class="fa fa-refresh"></i>全部已读</button>-->
+  </div>
+  <div *ngIf="k==0;">
+    <div *ngIf="!(d&&d.length)" class="text-center" style="margin-top: 100px;margin-bottom: 100px">
+      <img src="http://icon.qiantucdn.com/img/searchnew/nores.png" width="100" alt="">
+      <div class="mt-2">空空如也，啥也没有～</div>
+    </div>
+    <table *ngIf="d&&d.length" class="table mw-100 mt-3 border">
+      <tbody>
+      <tr class="color-primary">
+        <td width="60">消息种类</td>
+        <td width="370">内容详情</td>
+        <td width="90">更新时间</td>
+        <td width="115">操作</td>
+      </tr>
+      <tr *ngFor="let idx of d">
+        <td>{{idx.kind}}</td>
+        <td>{{idx.content}}</td>
+        <td>{{idx.time | date:'yyyy-MM-dd HH:mm'}} </td>
+        <td>-</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="k==1">
+    <div class="text-center" style="margin-top: 100px;margin-bottom: 100px">
+      <img src="http://icon.qiantucdn.com/img/searchnew/nores.png" width="100" alt="">
+      <div class="mt-2">暂无相关记录</div>
+    </div>
+  </div>
+</mat-card>

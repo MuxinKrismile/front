@@ -1,0 +1,296 @@
+<div class="mb-2">
+  <div class="d-flex flex-wrap px-2 py-2">
+    <a pageScroll class="my-2 anchor" href="#administrative_licensing">行政许可
+      <span class="ml-1" *ngIf="d&&d.administrativeLicenseIc&&d.administrativeLicenseCh">{{d.administrativeLicenseIc.length+d.administrativeLicenseCh.length}}</span></a>
+    <a pageScroll class="my-2 anchor" href="#tax_letter">税务信用<span class="ml-1" *ngIf="d&&d.taxCredit">{{d.taxCredit.length}}</span></a>
+    <a pageScroll class="my-2 anchor" href="#procdure_info">产品信息<span class="ml-1" *ngIf="d&&d.productInformation">{{d.productInformation.length}}</span></a>
+    <a pageScroll class="my-2 anchor" href="#finance_info">融资信息<span class="ml-1" *ngIf="d&&d.financingInformation">{{d.financingInformation.length}}</span></a>
+    <a pageScroll class="my-2 anchor" href="#bid_info">招投标信息<span class="ml-1" *ngIf="d&&d.biddingInformation">{{this.num[0]+d.biddingInformation.length}}</span></a>
+    <a pageScroll class="my-2 anchor" href="#recruit">招聘<span class="ml-1" *ngIf="d&&d.recruitment">{{this.num[1]+d.recruitment.length}}</span></a>
+    <a pageScroll class="my-2 anchor" href="#cfo">财务总览<span class="ml-1">1</span></a>
+    <a pageScroll class="my-2 anchor" href="#imex">进出口信用<span class="ml-1">1</span></a>
+    <a pageScroll class="my-2 anchor" href="#wechat">微信公众号<span class="ml-1" *ngIf="d&&d.publicNumber">{{d.publicNumber.length}}</span></a>
+    <a pageScroll class="my-2 anchor" href="#news">新闻舆论<span class="ml-1" *ngIf="d&&d.newsLyrics">{{this.num[2]+d.newsLyrics.length}}</span></a>
+    <a pageScroll class="my-2 anchor">公告研报<span class="ml-1">0</span></a>
+    <a pageScroll class="my-2 anchor">地块公示<span class="ml-1">0</span></a>
+    <a pageScroll class="my-2 anchor">购地信息<span class="ml-1">0</span></a>
+    <a pageScroll class="my-2 anchor">土地转让<span class="ml-1">0</span></a>
+  </div>
+  <mat-divider></mat-divider>
+
+  <!--行政许可-->
+  <p *ngIf="d&&(d.administrativeLicenseIc.length>0)" id="administrative_licensing" class="mt-4 title">行政许可<span>[工商局]</span><span
+    class="tbadge">{{d.administrativeLicenseIc.length}}</span></p>
+  <table *ngIf="d&&(d.administrativeLicenseIc.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center" width="15%">许可文件编号</td>
+      <td class="text-center" width="16%">许可文件名称</td>
+      <td class="text-center" width="12%">有效期自</td>
+      <td class="text-center" width="12%">有效期至</td>
+      <td class="text-center">许可机关</td>
+      <td class="text-center" width="16%">许可内容</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.administrativeLicenseIc;let idx=index">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="text-center vertical-middle">{{s.num}}</td>
+      <td class="text-center vertical-middle">{{s.fileName}}</td>
+      <td class="text-center vertical-middle">{{s.datefrom}}</td>
+      <td class="text-center vertical-middle">{{s.dateto}}</td>
+      <td class="text-center vertical-middle">{{s.authority}}</td>
+      <td class="text-center vertical-middle">{{s.content}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--行政许可[信用中国]-->
+  <p *ngIf="d&&(d.administrativeLicenseCh.length>0)" class="mt-4 title">行政许可<span>[信用中国]</span><span class="tbadge">{{d.administrativeLicenseCh.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.administrativeLicenseCh.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center">项目名称</td>
+      <td class="text-center" width="15%">地域</td>
+      <td class="text-center" width="20%">决定日期</td>
+      <td class="text-center" width="12%">内容</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.administrativeLicenseCh;let idx=index">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="text-center vertical-middle">{{s.project}}</td>
+      <td class="text-center vertical-middle">{{s.region}}</td>
+      <td class="text-center vertical-middle">{{s.date}}</td>
+      <td class="text-center vertical-middle"><a class="cliable">{{s.content}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--税务信用-->
+  <p *ngIf="d&&(d.taxCredit.length>0)" id="tax_letter" class="mt-4 title">税务信用<span class="tbadge">{{d.taxCredit.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.taxCredit.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center" width="18%">评价年度</td>
+      <td class="text-center">纳税人识别号</td>
+      <td class="text-center" width="18%">纳税信用等级</td>
+      <td class="text-center" width="20%">评价单位</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.taxCredit;let idx=index">
+      <td class="text-center">{{idx+1}}</td>
+      <td class="text-center">{{s.year}}</td>
+      <td class="text-center">{{s.code}}</td>
+      <td class="text-center">{{s.level}}</td>
+      <td class="text-center">{{s.unit}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--产品信息-->
+  <p *ngIf="d&&(d.productInformation.length>0)" id="procdure_info" class="mt-4 title">产品信息<span class="tbadge">{{d.productInformation.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.productInformation.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center" width="15%">产品图片</td>
+      <td class="text-center" width="10%">产品名</td>
+      <td class="text-center" width="10%">融资信息</td>
+      <td class="text-center" width="12%">成立时间</td>
+      <td class="text-center" width="10%">所属地</td>
+      <td class="text-center">产品介绍</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.productInformation;let idx=index">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="text-center vertical-middle"><img src="{{s.src}}" style="width: 66px;max-height: 66px;"></td>
+      <td class="text-center vertical-middle"><a href="#">{{s.name}}</a></td>
+      <td class="text-center vertical-middle">{{s.financing}}</td>
+      <td class="text-center vertical-middle">{{s.foundTime}}</td>
+      <td class="text-center vertical-middle">{{s.region}}</td>
+      <td class="vertical-middle">{{s.introduction}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--融资信息-->
+  <p *ngIf="d&&(d.financingInformation.length>0)" id="finance_info" class="mt-4 title">融资信息<span class="tbadge">{{d.financingInformation.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.financingInformation.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center" width="15%">日期</td>
+      <td class="text-center" width="10%">产品名称</td>
+      <td class="text-center" width="10%">级别</td>
+      <td class="text-center" width="18%">金额</td>
+      <td class="text-center">投资方</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.financingInformation;let idx=index">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="text-center vertical-middle">{{s.date}}</td>
+      <td class="text-center vertical-middle">{{s.name}}</td>
+      <td class="text-center vertical-middle">{{s.level}}</td>
+      <td class="text-center vertical-middle">{{s.money}}</td>
+      <td class="text-center vertical-middle">
+        <div><a href="#">GIC新加坡政府投资公司</a>
+        </div>
+        <div>
+          全明星投资All-Stars Investment
+        </div>
+        <div><a href="#">DST</a>
+        </div>
+        <div><a href="#">厚朴基金</a>
+        </div>
+        <div><a href="#">云锋基金</a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--招投标信息-->
+  <p *ngIf="d&&(d.biddingInformation.length>0)" id="bid_info" class="mt-4 title">招投标信息<span class="tbadge">{{this.num[0]+d.biddingInformation.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.biddingInformation.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center">描述</td>
+      <td class="text-center" width="15%">发布时间</td>
+      <td class="text-center" width="10%">所属地区</td>
+      <td class="text-center" width="15%">项目分类</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.biddingInformation;let idx=index;">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="vertical-middle"><a class="cliable">{{s.desc}}</a></td>
+      <td class="text-center vertical-middle">{{s.date}}</td>
+      <td class="text-center vertical-middle">{{s.region}}</td>
+      <td class="text-center vertical-middle">{{s.kind}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <ngb-pagination *ngIf="d&&(d.biddingInformation.length>0)" class="d-flex mt-4 justify-content-end"
+                  [collectionSize]="this.num[0]+d.biddingInformation.length"
+                  [maxSize]="10"
+                  [(page)]="page"></ngb-pagination>
+
+  <!--招聘-->
+  <p *ngIf="d&&(d.recruitment.length>0)" id="recruit" class="title mt-2">招聘<span class="tbadge">{{this.num[1]+d.recruitment.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.recruitment.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center" width="15%">发布时间</td>
+      <td class="text-center">招聘职位</td>
+      <td class="text-center" width="15%">月薪</td>
+      <td class="text-center" width="14%">学历</td>
+      <td class="text-center" width="14%">经验</td>
+      <td class="text-center" width="12%">所在城市</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.recruitment;let idx=index">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="text-center vertical-middle">{{s.date}}</td>
+      <td class="text-center vertical-middle">{{s.position}}</td>
+      <td class="text-center vertical-middle">{{s.money}}</td>
+      <td class="text-center vertical-middle">{{s.education}}</td>
+      <td class="text-center vertical-middle">{{s.experience}}</td>
+      <td class="text-center vertical-middle">{{s.city}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <ngb-pagination *ngIf="d&&(d.recruitment.length>0)" class="d-flex mt-4 justify-content-end"
+                  [collectionSize]="this.num[1]+d.recruitment.length" [maxSize]="10"
+                  [(page)]="page"></ngb-pagination>
+
+  <!--财务总览-->
+  <p id="cfo" class="title mt-0">财务总览<span class="f-14" style="font-weight: 400"> (相关数据来源企业年报估算，仅供参考)</span></p>
+  <table class="table mw-100">
+    <tbody>
+    <tr>
+      <td width="20%" class="table-primary">公司实力等级：</td>
+      <td width="30%">100亿以上</td>
+      <td width="20%" class="table-primary">纳税区间：</td>
+      <td width="30%">1亿以上</td>
+    </tr>
+    <tr>
+      <td class="table-primary">销售净利润率：</td>
+      <td>0到10%</td>
+      <td class="table-primary">销售毛利率：</td>
+      <td>0%到10%</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--进出口信用-->
+  <p id="imex" class="mt-4 title">进出口信用<span class="tbadge">1</span></p>
+  <table class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center" width="15%">注册海关</td>
+      <td class="text-center">经营类别</td>
+      <td class="text-center" width="18%">注册日期</td>
+      <td class="text-center" width="12%">内容</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let idx of [1]">
+      <td class="text-center vertical-middle">{{idx}}</td>
+      <td class="text-center vertical-middle">北京关区</td>
+      <td class="text-center vertical-middle">进出口收发货人</td>
+      <td class="text-center vertical-middle">2011-04-20</td>
+      <td class="text-center vertical-middle"><a class="cliable">查看详情</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--微信公众号-->
+  <p *ngIf="d&&(d.publicNumber.length>0)" id="wechat" class="mt-4 title">微信公众号<span class="tbadge">{{d.publicNumber.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.publicNumber.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center" width="16%">头像</td>
+      <td class="text-center" width="16%">微信公众号</td>
+      <td class="text-center" width="12%">微信号</td>
+      <td class="text-center" width="16%">二维码</td>
+      <td class="text-center">简介</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.publicNumber;let idx=index;">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="text-center vertical-middle"><img src="{{s.avator}}" style="width: 66px;"></td>
+      <td class="text-center vertical-middle">{{s.name}}</td>
+      <td class="text-center vertical-middle">{{s.code}}</td>
+      <td class="text-center vertical-middle"><img src="../../../../assets/img/qrcode.png" class="wechat-img">
+        <div class="text-primary wechart-hover">详情</div>
+      </td>
+      <td class="vertical-middle">{{s.introduction}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--新闻舆情-->
+  <p *ngIf="d&&(d.newsLyrics.length>0)" id="news" class="mt-4 title">新闻舆情<span
+    class="tbadge">{{this.num[2]+d.newsLyrics.length}}</span></p>
+  <table *ngIf="d&&(d.newsLyrics.length>0)" class="table mw-100 news_talk">
+    <tbody class="news_tb">
+    <tr class="mb-2" *ngFor="let s of d.newsLyrics;let idx=index">
+      <td>
+        <a>
+          <div><span class="title">{{s.title}}</span>
+            <div class="d-flex title_content mt-4">
+              <div class="subtitle"><label>来源：</label> {{s.source}}</div>
+              <div class="ml-auto"><label>发布时间：</label> {{s.date}}</div>
+            </div>
+          </div>
+        </a></td>
+    </tr>
+    </tbody>
+  </table>
+  <ngb-pagination *ngIf="d&&(d.recruitment.length>0)" class="d-flex mt-4 justify-content-center"
+                  [collectionSize]="this.num[2]+d.newsLyrics.length"
+                  [maxSize]="5"
+                  [(page)]="page"></ngb-pagination>
+</div>

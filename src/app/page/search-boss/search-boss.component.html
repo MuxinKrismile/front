@@ -1,0 +1,195 @@
+<div class="container-fluid bg" style="margin-top: -20px">
+  <div class="row flex-column">
+    <h1 class="align-self-center mb-5 mt-5" style="color: #5a5a5a">查老板，就上企信通！</h1>
+    <div class="align-self-stretch d-flex justify-content-center mb-2">
+      <div class="d-flex" style="width: 60%">
+        <div ngbDropdown class="d-flex flex-column w-100" #myDrop="ngbDropdown">
+          <input #input ngbDropdownAnchor id="dropdownManual" name="q" class="rounded-0 flex-grow-1"
+                 style="font-size: 14px;border: none;text-indent: 12px;max-height: 48px" autocomplete="off"
+                 placeholder="请输入法定代表人、股东或高管姓名，如“雷军”" [(ngModel)]="key" (keydown)="onKeydown($event)">
+          <!--<div ngbDropdownMenu aria-labelledby="dropdownManual" style="padding: 0">
+            <ul class="py-0 m-0" style="padding-left: 0 !important;" [ngStyle]="{'width': width + 'px'}">
+              <li class="suggest-item" (click)="click(item)" *ngFor="let item of filter(items, key)">{{item}}
+              </li>
+            </ul>
+          </div>-->
+        </div>
+        <div class="input-group-btn btn-group-lg">
+          <button style="width: 80px" class="btn btn-info rounded-0" (click)="selBoss()"><i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="align-self-center row justify-content-between mt-5 mb-5 hot">
+      <a class="px-2 mr-2 text-center align-self-center hot-title f-14" href="#" style="color: #5a5a5a">
+        <div>热点</div>
+        <div>人物</div>
+      </a>
+      <a class="mr-2 d-inline-flex align-self-center" href="#" style="color: #5a5a5a">
+        <span>
+          <img style="width: 44px"
+               src="https://img.tianyancha.com/logo/human2/a30437ddf24d54d50e143fa102000a25.png@!watermark01" alt="李冰冰">
+        </span>
+        <span class="align-self-center px-2">李冰冰</span>
+      </a>
+      <a class="mr-2 d-inline-flex align-self-center" href="#" style="color: #5a5a5a">
+        <span>
+          <img style="width: 44px"
+               src="https://img.tianyancha.com/logo/human2/3523c6e7648a5f98b047e60672fbe7ab.png@!watermark01" alt="杨幂">
+        </span>
+        <span class="align-self-center px-2">杨幂</span>
+      </a>
+      <a class="mr-2 d-inline-flex align-self-center" href="#" style="color: #5a5a5a">
+        <span>
+          <img style="width: 44px"
+               src="https://img.tianyancha.com/logo/human2/803dc6295fccfad7a7dfb185efac5e4c.png@!watermark01" alt="马化腾">
+        </span>
+        <span class="align-self-center px-2">马化腾</span>
+      </a>
+      <a class="mr-2 d-inline-flex align-self-center" href="#" style="color: #5a5a5a">
+        <span>
+          <img style="width: 44px"
+               src="https://img.tianyancha.com/logo/human2/2a992f587094dcfce37b8ecd62524cc7.png@!watermark01" alt="雷军">
+        </span>
+        <span class="align-self-center px-2">雷军</span>
+      </a>
+      <a class="mr-2 d-inline-flex align-self-center" href="#" style="color: #5a5a5a">
+        <span>
+          <img style="width: 44px"
+               src="https://img.tianyancha.com/logo/human2/7252138c33091ec076b8070e435c9dab.png@!watermark01" alt="赵薇">
+        </span>
+        <span class="align-self-center px-2">赵薇</span>
+      </a>
+      <a class="mr-2 d-inline-flex align-self-center" href="#" style="color: #5a5a5a">
+        <span>
+          <img style="width: 44px"
+               src="https://img.tianyancha.com/logo/human2/5172e25d9cebfe1776c55644035f2766.png@!watermark01" alt="王长田">
+        </span>
+        <span class="align-self-center px-2">王长田</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container mt-5 px-0" style="background: #ffffff">
+  <div class="py-3">
+    <h3 class="text-center" style="font-size: 24px;">热门媒体动态</h3>
+    <div class="d-flex py-3 px-3">
+      <div style="width:25%" class="mx-2 px-2 py-3 flex-grow-1 border hot-person">
+        <a href="#">
+          <img style="width:271px;height:171px;"
+               src="https://co-image.qichacha.com/upload/chacha/img/20180726/1532575967707381.jpg"
+               alt="资本由蜜糖变鸩酒：一个传媒公司的跳船自救">
+        </a>
+        <div class="mt-1 person-title">
+          <a href="#">资本由蜜糖变鸩酒：一个传媒公司的跳船自救</a>
+        </div>
+        <div class="mt-2 f-13 person-time">
+          <i class="fa fa-calendar"></i>
+          <span class="pl-2">9时2分钟前</span>
+        </div>
+      </div>
+      <div style="width:25%" class="mx-2 px-2 py-3 flex-grow-1 border hot-person">
+        <a href="#">
+          <img style="width:271px;height:171px;"
+               src="https://co-image.qichacha.com/upload/chacha/img/20180725/1532482668728630.jpg"
+               alt="罗永浩中场战事：有心杀贼无力回天，TNT是克制的创新">
+        </a>
+        <div class="mt-1 person-title">
+          <a href="#">罗永浩中场战事：有心杀贼无力回天，TNT是克制的创新</a>
+        </div>
+        <div class="mt-2 f-13 person-time">
+          <i class="fa fa-calendar"></i>
+          <span class="pl-2">1天前</span>
+        </div>
+      </div>
+      <div style="width:25%" class="mx-2 px-2 py-3 flex-grow-1 border hot-person">
+        <a href="#">
+          <img style="width:271px;height:171px;"
+               src="https://co-image.qichacha.com/upload/chacha/img/20180724/1532399280638922.jpg"
+               alt="把2元生意做到190亿，被宝洁视为“真正的对手”，这个男人值得所有人怀念">
+        </a>
+        <div class="mt-1 person-title">
+          <a href="#">把2元生意做到190亿，被宝洁视为“真正的对手”，这个男人值得所有人怀念</a>
+        </div>
+        <div class="mt-2 f-13 person-time">
+          <i class="fa fa-calendar"></i>
+          <span class="pl-2">2天前</span>
+        </div>
+      </div>
+      <div style="width:25%" class="mx-2 px-2 py-3 border hot-person">
+        <a href="#">
+          <img style="width:271px;height:171px;"
+               src="https://co-image.qichacha.com/upload/chacha/img/20180723/1532310817227493.jpg"
+               alt="阿里入股150亿，独角兽企业竞相投入，这是怎样一家神企？">
+        </a>
+        <div class="mt-1 person-title">
+          <a href="#">阿里入股150亿，独角兽企业竞相投入，这是怎样一家神企？</a>
+        </div>
+        <div class="mt-2 f-13 person-time">
+          <i class="fa fa-calendar"></i>
+          <span class="pl-2">3天前</span>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex py-3 px-3">
+      <div style="width:25%" class="mx-2 px-2 py-3 border hot-person">
+        <a href="#">
+          <img style="width:271px;height:171px;"
+               src="https://co-image.qichacha.com/upload/chacha/img/20180720/1532069535283550.jpg"
+               alt="最新世界500强名单出炉！|企业信息平台秒查他们的详情">
+        </a>
+        <div class="mt-1 person-title">
+          <a href="#">最新世界500强名单出炉！|企业信息平台秒查他们的详情</a>
+        </div>
+        <div class="mt-2 f-13 person-time">
+          <i class="fa fa-calendar"></i>
+          <span class="pl-2">6天前</span>
+        </div>
+      </div>
+      <div style="width:25%" class="mx-2 px-2 py-3 border hot-person">
+        <a href="#">
+          <img style="width:271px;height:171px;"
+               src="https://co-image.qichacha.com/upload/chacha/img/20180720/1532067564588217.jpg"
+               alt="N亿赞助商不敌千万退款费！这样的营销方式，我服！">
+        </a>
+        <div class="mt-1 person-title">
+          <a href="#">N亿赞助商不敌千万退款费！这样的营销方式，我服！</a>
+        </div>
+        <div class="mt-2 f-13 person-time">
+          <i class="fa fa-calendar"></i>
+          <span class="pl-2">6天前</span>
+        </div>
+      </div>
+      <div style="width:25%" class="mx-2 px-2 py-3 border hot-person">
+        <a href="#">
+          <img style="width:271px;height:171px;"
+               src="https://co-image.qichacha.com/upload/chacha/img/20180720/1532066465591900.jpg"
+               alt="连续4跌停，市值蒸发82亿！利润超高的救命疫苗竟是假药">
+        </a>
+        <div class="mt-1 person-title">
+          <a href="#">连续4跌停，市值蒸发82亿！利润超高的救命疫苗竟是假药</a>
+        </div>
+        <div class="mt-2 f-13 person-time">
+          <i class="fa fa-calendar"></i>
+          <span class="pl-2">6天前</span>
+        </div>
+      </div>
+      <div style="width:25%" class="mx-2 px-2 py-3 border hot-person">
+        <a href="#">
+          <img style="width:271px;height:171px;"
+               src="https://co-image.qichacha.com/upload/chacha/img/20180720/1532055254848073.jpg"
+               alt="18天爆雷131家！跑路p2p的3点共性，值得警惕！">
+        </a>
+        <div class="mt-1 person-title">
+          <a href="#">18天爆雷131家！跑路p2p的3点共性，值得警惕！</a>
+        </div>
+        <div class="mt-2 f-13 person-time">
+          <i class="fa fa-calendar"></i>
+          <span class="pl-2">6天前</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

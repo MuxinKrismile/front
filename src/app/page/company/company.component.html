@@ -1,0 +1,168 @@
+<div id="top" class="container">
+  <mat-card style="box-shadow: none" class="card rounded-0" *ngIf="company">
+    <div class="row pl-2">
+      <img class="mr-4 border" style="height: 100px; width: 100px; border-radius: 8px" src="{{company.img}}">
+      <div>
+        <p class="mb-2 mb-3">
+          <a style="font-size: 22px; color: black; font-weight: bold">{{company.name}}<span
+            class="ml-3 nsatus col_name">曾用名</span>
+            <span class="ml-2 nsatus col_work">在业</span>
+          </a></p>
+        <p class="f-14 mb-2">电话： {{company.phone}} <a href="#" class="ml-2">更多号码</a></p>
+        <p class="f-14 mb-2">邮箱： {{company.mail}} <span class="ml-2">官网： {{company.website}}</span></p>
+        <p class="f-14 mb-2">地址： {{company.addr}} <a href="#" class="ml-2">附近公司</a></p>
+        <p *ngIf="company.introduction" class="f-14 mb-2">简介： {{bugHanddle(company.introduction) + '...'}} <a href="#"
+                                                                                                              class="ml-2">查看详情</a>
+        </p>
+      </div>
+
+      <div class="d-flex flex-column ml-auto mr-2-5">
+        <div class="d-flex justify-content-between functions">
+          <a class="c_iconDt mr-2 px-2" (click)="openNote()"><span><i class="fa fa-pencil-square-o"
+                                                                          style="margin-right: 2px;"></i></span>笔记</a>
+          <!--<ng-template #note let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title">笔记</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="nnote-list">
+                <div class="item d-flex">
+                  <div class="content">啦啦啦啦啦
+                    <div class="time">2018-07-20 16:16</div>
+                  </div>
+                  <div class="ml-auto">
+                    <button class="butn mr-2" style="color: #d3d3d3;" (click)="editNote()">
+                      <i class="fa fa-pencil" style="font-size: 22px;"></i>
+                    </button>
+                    <button class="butn" style="color: #d3d3d3">
+                      <i class="fa fa-trash" style="font-size: 22px"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <textarea *ngIf="wriNote" class="form-control" style="resize: none;" rows="5"
+                            placeholder="请输入笔记…"></textarea>
+                  <textarea *ngIf="!wriNote" class="form-control" style="resize: none;" rows="5"
+                            placeholder="啦啦啦"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-primary" (click)="c('Save click')">提交</button>
+            </div>
+          </ng-template>-->
+          <!-- <a class="c_iconDt mr-2 px-2"><span><i class="fa fa-retweet mr-1"
+                                                  style="margin-right: 2px;"></i></span>对比</a>-->
+          <a *ngIf="!alreadyAttention" class="c_iconDt mr-2 px-2" (click)="openAttention()"><span><i
+            class="fa fa-heart-o mr-1"
+            style="margin-right: 2px;"></i></span>关注</a>
+          <a *ngIf="alreadyAttention" class="c_iconDt mr-2 px-2" (click)="cancelAttention(company.id)"
+             style="background-color: #128bed;color: #ffffff"><span><i class="fa fa-heart-o mr-1"
+                                                                       style="margin-right: 2px;color: #ffffff!important;"></i></span>已关注</a>
+          <a *ngIf="!alreadyMonitor" class="c_iconDt px-2" (click)="startMonitor(company.id)"><span><i class="fa fa-eye mr-1"
+                                                                                                style="margin-right: 2px;"></i></span>监控</a>
+          <a *ngIf="alreadyMonitor" class="c_iconDt mr-2 px-2" (click)="cancelMonitor(company.id)"
+             style="background-color: #128bed;color: #ffffff"><span><i class="fa fa-eye mr-1"
+                                                                       style="margin-right: 2px;color: #ffffff!important;"></i></span>已监控</a>
+         <!-- <ng-template #monitor let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title">添加监控</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-2 choice" *ngFor="let g of groups;let idx=index">
+                <label class="radio">{{g}}<input type="radio" name="monitorValue" [(ngModel)]="monitorValue"
+                                                 [value]="idx" (click)="onMonitorCheck(idx)"><i></i></label>
+              </div>
+              <div class="mb-2 choice d-flex">
+                <label class="radio">更多...<input type="radio" name="monitorValue" [(ngModel)]="monitorValue"
+                                                 [value]="groups.length" (click)="onMonitorCheck(groups.length)"><i></i></label>
+                <input *ngIf="minputFlag" type="text" class="ml-2 form-control pl-1 "
+                       style="width: 120px;height: 26px"/>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-primary" (click)="saveMonitor()">确认</button>
+            </div>
+          </ng-template>-->
+        </div>
+        <p class="text-right my-3 f-14">更新时间：4时9分钟前<span class="ml-1"><i class="fa fa-refresh f-16"
+                                                                         style="color: #ABABAB;"></i></span></p>
+        <p class="text-right mt-auto mb-2 f-14"><span class="mr-2">关注：4968</span> 浏览：16402629 次</p>
+      </div>
+    </div>
+  </mat-card>
+
+  <div class="mt-3 row">
+    <div class="col-lg-9">
+      <mat-card style="box-shadow: none" class="card rounded-0 pt-0">
+        <div style="margin: 0 -24px" class="d-flex flex-nowrap justify-content-between">
+          <a [ngClass]="{'active': selector===0, 'remove-left-border': selector===0}" (click)="changePage(0)"
+             routerLink="/company/basicinfo" class="selector f-16 active remove-left-border">基本信息</a>
+          <a [class.active]="selector===1" (click)="changePage(1)" routerLink='/company/legalproceed'
+             class="selector f-16">法律诉讼</a>
+          <a [class.active]="selector===2" (click)="changePage(2)" routerLink="/company/operatingcondition"
+             class="selector f-16">经营状况</a>
+          <a [class.active]="selector===3" (click)="changePage(3)" routerLink="/company/businessrisk"
+             class="selector f-16">经营风险</a>
+          <a [class.active]="selector===4" (click)="changePage(4)" routerLink="/company/businessreport"
+             class="selector f-16">企业年报</a>
+          <a [class.active]="selector===5" (click)="changePage(5)" routerLink="/company/intellectual"
+             class="selector f-16">知识产权</a>
+          <a [ngClass]="{'active': selector===6, 'remove-right-border': selector===6}" (click)="changePage(6)"
+             routerLink="/company/historyinfo" class="selector f-16 remove-right-border">历史信息</a>
+        </div>
+        <mat-divider></mat-divider>
+        <router-outlet></router-outlet>
+      </mat-card>
+    </div>
+
+    <div class="col-lg-3 pl-lg-0">
+
+      <mat-card style="box-shadow: none" class="card rounded-0 py-2-5 py-2-5">
+        <p class="f-16 mb-2-5">下载报告</p>
+        <mat-divider></mat-divider>
+        <div class="d-flex flex-column align-items-center pt-3">
+          <img  class="ml-4 mw-100" src="../../../assets/img/report.png">
+          <button class="btn btn-primary mt-3 f-12">下载报告</button>
+        </div>
+      </mat-card>
+
+      <mat-card style="box-shadow: none" class="card rounded-0 mt-3 py-2-5">
+        <p class="f-16 mb-2-5">投资图谱</p>
+        <mat-divider></mat-divider>
+        <div class="d-flex flex-column align-items-center pt-4">
+          <img class="mw-100" src="../../../assets/img/tupu.png">
+          <button class="btn btn-primary mt-3 f-12">查看投资图谱</button>
+        </div>
+      </mat-card>
+
+      <mat-card style="box-shadow: none" class="card rounded-0 mt-3 py-2-5">
+        <p class="f-16 mb-2-5">关联图谱</p>
+        <mat-divider></mat-divider>
+        <div class="d-flex flex-column align-items-center pt-4">
+          <img class="mw-100" src="../../../assets/img/muhou.png">
+          <button class="btn btn-primary mt-3 f-12">查看关联图谱</button>
+        </div>
+      </mat-card>
+
+      <mat-card style="box-shadow: none" class="card rounded-0 mt-3 py-2-5">
+        <p class="f-16 mb-2-5">企业图谱</p>
+        <mat-divider></mat-divider>
+        <div class="d-flex flex-column align-items-center pt-4">
+          <img class="mw-100" src="../../../assets/img/qytu.jpg">
+          <button class="btn btn-primary mt-3 f-12">查看企业图谱</button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

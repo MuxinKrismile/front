@@ -1,0 +1,30 @@
+<div class="pt-3">
+  <div class="d-flex">
+    <div ngbDropdown class="d-flex flex-column" style="width: 92%" #myDrop1="ngbDropdown">
+      <input #input ngbDropdownAnchor id="dropdownManual" class="rounded-0 flex-grow-1" autocomplete="off"
+             placeholder="在此添加公司" [ngModel]="inputKey" (ngModelChange)="keyChange($event)">
+      <div ngbDropdownMenu aria-labelledby="dropdownManual">
+        <ul class="py-0 m-0" style="padding-left: 0 !important;" [ngStyle]="{'width': width + 'px'}">
+          <li class="suggest-item" (click)="selectCompany(item)" *ngFor="let item of companyItems">{{item.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a *ngIf="Current > 1 && Current == MaxLine" (click)="plus(0)" class="py-0 ml-1 my-0"
+       style="color: #128bed;font-size: 18px;"><i class="fa fa-plus-circle"></i></a>
+    <a *ngIf="Current > 1 && Current != MaxLine" (click)="plus(1)" class="py-0 ml-1 my-0"
+       style="color: #128bed;font-size: 18px;"><i class="fa fa-minus-circle"></i></a>
+  </div>
+  <div class="d-flex py-1">
+    <div *ngIf="selectButton" class="pr-2">
+      <angular2-multiselect [data]="bossList"
+                            [(ngModel)]="bossSelectedList"
+                            [settings]="settings"
+                            (onSelect)="selectBoss($event)">
+      </angular2-multiselect>
+    </div>
+    <div class="ana-uncheck f-14">选择人
+      <input type="checkbox" (click)="enableSelectBoss()">
+    </div>
+  </div>
+</div>

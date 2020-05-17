@@ -1,0 +1,82 @@
+<div class="d-flex mb-2">
+  <li class="mr-2"><a routerLink="/dashboard">首页</a></li>
+  /
+  <li class="mx-2"><a routerLink="/brands">商标查询</a></li>
+  /
+  <li class="mx-2"><a routerLink="/brand-search/brand-body">{{searchContent}}商标查询列表</a></li>
+  /
+  <li class="mx-2">商标查询详情</li>
+</div>
+<section *ngIf="d&&d.body" class="panel panel-default patentdetailbox" id="searchlist" [innerHtml]="d.body | safeHTML">
+  <!--<table class="table  table-bordered">
+    <tbody>
+    <tr></tr>
+    <tr>
+      <td width="30%">商标名称：</td>
+      <td>小米</td>
+    </tr>
+    <tr>
+      <td width="30%">注册号：</td>
+      <td>10979469</td>
+    </tr>
+    <tr>
+      <td width="30%">分类：</td>
+      <td>第45类社会法律</td>
+    </tr>
+    <tr>
+      <td width="30%">商标状态：</td>
+      <td>变更商标申请人/注册人名义/地址完成</td>
+    </tr>
+    <tr>
+      <td width="30%">申请人：</td>
+      <td><a class="text-primary" href="/firm_9cce0780ab7644008b73bc2120479d31.html">
+        小米科技有限责任公司
+      </a></td>
+    </tr>
+    <tr>
+      <td width="30%">申请日期：</td>
+      <td>2012-05-28</td>
+    </tr>
+    <tr>
+      <td width="30%">图片：</td>
+      <td><img src="http://tm-image.qichacha.com/4e5a08d6282fcaff44e16df6dd101cd5.jpg" alt="小米-企查查"
+               style="max-width:200px;"></td>
+    </tr>
+    <tr>
+      <td width="30%">商品/服务列表：</td>
+      <td>
+        开保险锁(4505)<br>
+        交友服务(4505)<br>
+        婚姻介绍(4505)<br>
+        消防(4505)<br>
+        火警报警器出租(4505)<br>
+        计划和安排婚礼服务(4505)<br>
+        组织宗教集会(4505)<br>
+        领养代理(4505)<br>
+        失物招领(4505)<br>
+        保险箱出租(4505)<br>
+        宗谱研究(4505)<br>
+        灭火器出租(4505)<br></td>
+    </tr>
+    <tr>
+      <td width="30%">商标流程：</td>
+      <td>
+        2015-06-18&nbsp;&nbsp;变更商标申请人/注册人名义/地址完成<br>
+        2014-06-25&nbsp;&nbsp;变更商标申请人/注册人名义/地址中<br>
+        2013-10-08&nbsp;&nbsp;商标已注册<br>
+        2013-05-08&nbsp;&nbsp;注册申请初步审定<br>
+        2012-05-28&nbsp;&nbsp;商标注册申请中<br></td>
+    </tr>
+    <tr>
+      <td width="30%">使用期限：</td>
+      <td>2013/09/14 - 2023/09/13</td>
+    </tr>
+    <tr>
+      <td width="30%">代理机构：</td>
+      <td>
+        无
+      </td>
+    </tr>
+    </tbody>
+  </table>-->
+</section>

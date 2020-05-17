@@ -1,0 +1,49 @@
+<mat-card class="card rounded-0 mt-4 py-0" style="box-shadow: none">
+  <div class="d-flex justify-content-between">
+    <span class="align-self-center">搜索到 <em>{{company == undefined ? 0: company.length}}</em> 位含有 <em>“{{k}}”</em> 的关键字的信息</span>
+    <mat-form-field style="width: 15%">
+      <mat-select [value]="selected" (valueChange)="sort($event)">
+        <mat-option value="0">默认排序</mat-option>
+        <mat-option value="1">成立日期升序</mat-option>
+        <mat-option value="2">成立日期降序</mat-option>
+        <mat-option value="3">注册资本升序</mat-option>
+        <mat-option value="4">注册资本降序</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <mat-divider></mat-divider>
+  <div class="py-3 d-flex justify-content-between">
+    <span class="align-self-center">
+      小查为您找到 {{company == undefined ? 0: company.length}} 家符合条件的企业
+    </span>
+    <!--<button mat-button>导出数据</button>-->
+  </div>
+  <mat-divider></mat-divider>
+  <div class="my-2 d-flex justify-content-between">
+    <span>公司</span>
+    <span class="mr-3">状态</span>
+  </div>
+  <div *ngFor="let c of company | slice: ((page - 1) * 10) : page * 10" class="d-flex justify-content-between">
+    <mat-divider></mat-divider>
+    <div class="d-flex" style="max-width: 82%">
+      <img class="align-self-center mr-4" style="width: 80px !important; height: 80px !important;"
+           src="{{c.img}}">
+      <div class="py-3">
+        <p class="mb-2"><a (click)="navigate(c.id)" style="font-size: 18px; color: black; font-weight: bold"
+                           [innerHTML]="replaceFun(c.name, k)"></a>
+        </p>
+        <p class="f-14 mb-2">法定代表人： <span style="color: #1e99bc">{{c.representname}}</span><span class="ml-3">注册资本：{{c.capital}}</span>
+          <span class="ml-3">成立时间：{{c.foundTime | date: 'yyyy-MM-dd'}}</span></p>
+        <p class="f-14 mb-2">邮箱：{{c.mail}} <span class="ml-3">电话：{{c.phone}}</span>&nbsp;
+          <a style="color: #007AFC">更多号码</a></p>
+        <p class="f-14 mb-2">地址：{{c.addr}}</p>
+        <!--<p class="f-14 mb-2"><i class="fa fa-search"></i>法定代表人：<em style="color: #dc3545; font-style: normal">{{c.representname}}</em></p>-->
+      </div>
+    </div>
+    <span class="align-self-center mr-3 nsatus col_work">{{c.status}}</span>
+  </div>
+</mat-card>
+
+<ngb-pagination *ngIf="company" class="d-flex mt-4 justify-content-end" [collectionSize]="company.length"
+                [rotate]="true" [pageSize]="10" [maxSize]="7" [(page)]="page"></ngb-pagination>

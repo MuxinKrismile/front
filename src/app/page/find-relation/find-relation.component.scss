@@ -1,0 +1,224 @@
+input {
+  text-indent: 5px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.rel_head {
+  cursor: pointer;
+  li {
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+  .active {
+    color: #ffffff;
+    background-color: #00AAEE;
+  }
+}
+
+.ana-spot {
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #128bed;
+  box-shadow: 0 1px 1px #128bed;
+}
+
+.ana-spot2 {
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #FF7F00;
+  box-shadow: 0 1px 1px #FF7F00;
+}
+
+.ana-input-range {
+  border-radius: 10px;
+  height: 2px;
+  -webkit-appearance: none;
+  background: -webkit-linear-gradient(#059CFA, #059CFA) no-repeat;
+  padding: 0.075rem 0.75rem;
+}
+
+.rel-history {
+  li {
+    font-size: 13px;
+  }
+}
+
+.panel-all {
+  color: #fff;
+  background: #88c5f6;
+  font-weight: bold;
+  border-radius: 4px;
+  border-color: #eaeef1;
+  a:hover {
+    color: #fff;
+  }
+}
+
+:host /deep/ .myclass {
+  .cuppa-dropdown {
+    .selected-list {
+      .c-btn {
+        cursor: not-allowed;
+        background-color: #eee;
+        opacity: 1;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        width: 110px;
+        height: 34px;
+        padding: 5px 4px !important;
+        font-size: 15px;
+        box-shadow: none;
+        .c-angle-down {
+          width: 12px;
+          height: 12px;
+          top: 40%;
+          display: none;
+        }
+        .c-angle-up {
+          width: 12px;
+          height: 12px;
+          top: 40%;
+          display: none;
+        }
+      }
+    }
+    .dropdown-list {
+      .list-area {
+        .lazyContainer {
+          span {
+            .pure-checkbox {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ana-uncheck {
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+input[type="checkbox"][disabled] {
+  cursor: not-allowed;
+}
+
+ul {
+  margin-top: 0.75rem;
+}
+
+.ana-timeline .point {
+  width: 12px;
+  height: 12px;
+  font-size: 1.4em;
+  background: #46a4da;
+  border-radius: 50%;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.ana-timeline .content {
+  margin-left: 20px;
+}
+
+.ana-timeline .content .com {
+  color: #333;
+}
+
+
+/*横条样式*/
+input[type=range] {
+  -webkit-appearance: none; /*清除系统默认样式*/
+  width: 100%;
+  /*background: -webkit-linear-gradient(#91d5ff, #91d5ff) no-repeat, #ddd;*//*设置左边颜色为#61bd12，右边颜色为#ddd*/
+  background: -webkit-linear-gradient(#91d5ff, #91d5ff) no-repeat;
+  background-size: 0% 100%; /*设置左右宽度比例*/
+  height: 4px;
+  border-radius: 4px;
+}
+/*拖动块的样式*/
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; /*清除系统默认样式*/
+  /*  background: #fff; !*拖动块背景*!*/
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #91d5ff;
+  background-color: #fff;
+}
+
+/*添加公司*/
+.suggest-item {
+  padding: 6px 10px;
+  cursor: pointer;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: block;
+  color: #222;
+  position: relative;
+}
+
+.suggest-item a {
+  color: #222;
+  display: block;
+  max-width: 200px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suggest-item:hover {
+  background-color: #e5e9ef;
+}
+
+.selPerson {
+  a {
+    color: #000000;
+  }
+  a:hover {
+    color: #128bed;
+  }
+}
+
+/*下拉框*/
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: not-allowed;
+  background-color: #eee;
+  opacity: 1;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  width: 110px;
+  height: 34px;
+  padding-left: 6px;
+  margin-right: 5px;
+}
+
+select:focus {
+  border-color: #177bbb;
+}
+
+:host /deep/ option {
+  background: #ffffff;
+
+}
+
+input {
+  font-size: 14px;
+  max-height: 48px;
+}

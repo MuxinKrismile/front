@@ -1,0 +1,99 @@
+
+strong {
+  padding-bottom: 12px;
+  border-bottom: 2px solid #00AAEE;
+}
+
+//文章分类
+.category-item:before {
+  position: absolute;
+  top: 1em;
+  left: .2rem;
+  width: 0;
+  height: 0;
+  -webkit-transform-origin: 25% center;
+  transform-origin: 25% center;
+  border: 4px solid #fff;
+  border-left-color: #4285f4;
+  content: "";
+}
+
+.badge {
+  width: 2.2rem;
+  background-color: #17a2b8;
+  color: #fff;
+  font-weight: 700;
+  border-radius: .2rem;
+}
+
+/*标签云*/
+.tag-cloud {
+  margin: auto;
+  overflow: hidden;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.tags {
+  color: #fff;
+  padding: .08rem .4rem;
+  float: left;
+  text-align: center;
+  margin: .3rem;
+  transition: all .5s;
+}
+
+/*云标签颜色*/
+.tags:nth-child(9n+1) {
+  background: #78BBE6;
+}
+
+.tags:nth-child(9n+2) {
+  background: #FF895D;
+}
+
+.tags:nth-child(9n+3) {
+  background: #A3DE83;
+}
+
+.tags:nth-child(9n+4) {
+  background: #00BBF0;
+}
+
+.tags:nth-child(9n+5) {
+  background: #FF2E63;
+}
+
+.tags:nth-child(9n+6) {
+  background: #0D7377;
+}
+
+.tags:nth-child(9n+7) {
+  background: #AC005D;
+}
+
+.tags:nth-child(9n+8) {
+  background: #0881A3;
+}
+
+.tags:nth-child(9n+9) {
+  background: #EDA045;
+}
+
+.tags:hover {
+  color: #fff;
+  background: #333;
+}
+
+.heading {
+  font-size: 45px;
+  font-family: "Microsoft YaHei", Arial, serif;
+}
+
+#search {
+  background: url("http://www.qichacha.com/material/theme/chacha/cms/v2/images/bg-company-1.jpg");
+  background-size: cover;
+  padding: 100px 200px 100px;
+}

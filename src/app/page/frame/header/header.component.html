@@ -1,0 +1,64 @@
+<header>
+  <nav class="navbar navbar-expand-md fixed-top navbar-light bg-white box-shadow py-md-0">
+    <div class="container">
+      <a class="navbar-brand" routerLink='/dashboard'>
+        <img src="../../../../assets/img/logo.png" width="100" alt="企信通"></a>
+      <button class="navbar-toggler" type="button" aria-controls="navbarCollapse" (click)="isCollapsed = !isCollapsed"
+              [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color: black"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse" [ngbCollapse]="isCollapsed">
+        <ul class="navbar-nav mr-auto pl-3">
+          <li class="nav-item">
+            <a class="nav-link nav_active" [class.nav_active]="k==0" (click)="k=0" routerLink="/dashboard">查企业</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav_active" [class.nav_active]="k==1" (click)="k=1" routerLink="/search-boss">查老板</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav_active" [class.nav_active]="k==2" (click)="k=2" routerLink="/find-relation">找关系</a>
+          </li>
+        </ul>
+        <form class="nav-item navbar-form mr-2 py-md-2">
+          <div class="input-group">
+            <input type="search" name="q" class="form-control rounded-0 f-15" placeholder="搜索">
+            <div class="input-group-btn">
+              <button class="btn btn-info rounded-0" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </form>
+
+        <ul *ngIf="isLogin" class="navbar-nav" (mouseover)="mouseover($event)" (mouseout)="mouseout($event)">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" aria-haspopup="true"
+               [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" title="a935855375，欢迎回来！">
+              <img class="avatar" src="http://co-image.qichacha.com/upload/face/108.jpg" alt="a935855375">
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right mt-0 rounded-0 border-0" id="collapseExample"
+                 [ngbCollapse]="isDropDown">
+              <a class="dropdown-item pl-3" routerLink="/personal"><i
+                class="fa fa-fw fa-user text-info mr-2"></i>个人中心</a>
+
+              <a class="dropdown-item pl-3" routerLink="/personal/message"><i class="fa fa-fw fa-bell text-info mr-2"></i>消息
+
+              </a>
+              <a class="dropdown-item pl-3" (click)="logout()"><i class="fa fa-fw fa-sign-out text-info mr-2"></i>退出</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <ul *ngIf="!isLogin" class="navbar-nav">
+          <li class="nav-item">
+            <a routerLink="/login" class="nav-link">登录</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/register" class="nav-link">注册</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

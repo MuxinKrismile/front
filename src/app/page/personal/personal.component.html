@@ -1,0 +1,45 @@
+<div style="background-color: #F0F3F4;height: 90vh">
+  <div class="row p-0">
+    <div class="col-md-2">
+      <div class="hidden-xs" style="background-color: #ffffff">
+        <div class="d-flex top_header">
+          <div class="ft">
+            <!--<div class="img"><img src="../../../assets/img/avatar.png" style="width: 54px"></div>-->
+            <div class="img"><img src="http://co-image.qichacha.com/upload/face/108.jpg" style="width: 54px"></div>
+          </div>
+          <div *ngIf="d" class="bd mr-auto">
+            <div class="title">
+              <div class="name">
+                {{d.nickname}}
+              </div>
+              <div class="desc"><a href="#" class="text-primary">{{d.mail}}</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="ml-2" style="height: 90vh">
+          <li class="pl-3 py-3" routerLink="/personal/message" [class.rtab_active]="kind==0" (click)="kind=0"><i
+            class="fa fa-commenting-o mr-1"></i> 消息中心
+          </li>
+          <li class="pl-3 py-3" routerLink="/personal/monitor" [class.rtab_active]="kind==1" (click)="kind=1"><i
+            class="fa fa-television mr-1"></i>监控企业
+          </li>
+          <li class="pl-3 py-3" routerLink="/personal/attention" [class.rtab_active]="kind==2" (click)="kind=2"><i
+            class="fa fa-heart-o mr-1"></i>我的关注
+          </li>
+          <li class="pl-3 py-3" routerLink="/personal/note" [class.rtab_active]="kind==3" (click)="kind=3"><i
+            class="fa fa-file-text-o mr-1"></i>我的笔记
+          </li>
+          <li class="pl-3 py-3" routerLink="/personal/password" [class.rtab_active]="kind==4" (click)="kind=4"><i
+            class="fa fa-gear mr-1"></i>修改密码
+          </li>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="mr-5">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+

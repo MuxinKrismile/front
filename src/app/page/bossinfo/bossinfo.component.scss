@@ -1,0 +1,177 @@
+.c_iconDt {
+  height: 35px;
+  border: 1px solid #128bed;
+  color: #128bed !important;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 32px;
+  display: inline-block;
+  border-radius: 2px;
+  span {
+    color: #128bed;
+  }
+}
+
+a {
+  color: #128bed;
+}
+
+.table-primary {
+  background-color: #F2F9FC;
+  width: 20%;
+}
+
+.color-primary {
+  background-color: #F2F9FC;
+}
+
+td {
+  line-height: 20px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.cliable {
+  color: #128bed !important;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.anchor {
+  border: 1px solid #e7e9ef;
+  padding: 5px 10px;
+  color: #555555 !important;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 16px;
+}
+
+.anchor:hover {
+  background-color: #3889ec !important;
+  color: #ffffff !important;
+}
+
+a {
+  color: #000;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #4289FF;
+  cursor: pointer;
+}
+
+.f-bg {
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 2px #bbb;
+  -moz-box-shadow: 0 1px 2px #bbb;
+  box-shadow: 0 1px 2px #bbb;
+}
+
+li {
+  list-style: none;
+}
+
+.big_boss {
+  .title {
+    color: #333;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .text-gray {
+    color: #999;
+  }
+
+}
+
+:host ::ng-deep .tdpath {
+  line-height: 28px;
+  margin-bottom: 6px;
+}
+
+:host ::ng-deep .tdpath > div {
+  color: #222;
+  font-weight: 600;
+}
+
+:host ::ng-deep .tdpath > a {
+  color: #333;
+}
+
+:host ::ng-deep .tdpath > span {
+  display: inline-block;
+  width: 84px;
+  height: 25px;
+  background: url(../../../assets/img/line_arrow.png) no-repeat right bottom;
+  background-size: 75px 8px;
+  padding-bottom: 10px;
+  font-size: 12px;
+  color: #128bed;
+  text-align: center;
+  position: relative;
+  top: -8px;
+  margin-right: 6px;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.selector {
+  color: #3c4144;
+  padding: 0.75rem 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.selector:hover {
+  color: #128bed !important;
+  border-left: 1px solid #f0f0f1;
+  border-right: 1px solid #f0f0f1;
+  background-color: #f6f6f7;
+  span {
+    color: #128bed !important;
+  }
+}
+
+.active {
+  color: #128bed !important;
+  border-left: 1px solid #f0f0f1;
+  border-right: 1px solid #f0f0f1;
+  span {
+    color: #128bed !important;
+  }
+}
+
+.remove-left-border {
+  border-left: none;
+}
+
+.remove-right-border {
+  border-right: none;
+}
+
+.tbadge {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fd485e;
+  padding-left: 2px;
+}
+
+.badge {
+  margin-left: 0px;
+  border-radius: 30px;
+  font-size: 12px;
+  color: #909090;
+  border: none;
+}
+
+.people_disable, .people_disable:hover, .people_disable:active {
+  background: #fff !important;
+  color: #BBB5B5 !important;
+  cursor: default !important;
+}

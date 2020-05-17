@@ -1,0 +1,24 @@
+.attention_content {
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: #128bed;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+.butn {
+  border: none;
+  color: #128bed;
+  background: none;
+  margin-left: -6px;
+  cursor: pointer;
+}
+
+.table thead tr th{
+  border-bottom: 1px solid #dee2e6
+}

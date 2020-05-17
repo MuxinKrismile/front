@@ -1,0 +1,26 @@
+<div class="px-3 flex-grow-1">
+  <h5 class="font-weight-bold pt-3">疑似关联关系</h5>
+
+  <!--第一个-->
+  <app-node-search *ngFor="let x of rangeArray(0, line)" [MaxLine]="line" [Current]="x" (add)="add($event)"
+                   (emitter)="recieve($event, x)"></app-node-search>
+
+  <!--开始分析按钮-->
+  <button (click)="begin()" class="btn btn-info mt-3" style="width: 100%;">开始分析</button>
+
+  <!--搜索历史-->
+  <div class="mt-3" style="border-bottom: 1px solid #ddd"></div>
+  <div class="py-3">
+    <h5 class="font-weight-bold">搜索历史</h5>
+    <div class="d-flex">
+      <ul class="list-group rel-history flex-grow-1">
+        <li class="list-group-item selPerson d-inline-flex">
+          <a class="d-inline-flex flex-column align-items-center flex-grow-1" (click)="showDemo()">
+            <div>雷军 刘德 林斌</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

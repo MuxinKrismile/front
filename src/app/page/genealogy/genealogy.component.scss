@@ -1,0 +1,22 @@
+
+.selector {
+  margin: 0 1rem;
+  color: #000000;
+}
+
+.selector:hover {
+  color: #0062cc !important;
+}
+
+.selected {
+  color: #007bff !important;
+  border-bottom: 2px solid #007bff;
+}
+
+.header {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  z-index: 10;
+}
+

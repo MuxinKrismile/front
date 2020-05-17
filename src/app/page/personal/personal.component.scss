@@ -1,0 +1,48 @@
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.top_header {
+  padding: 15px 8px 15px 15px;
+  border-bottom: solid 1px #eee;
+}
+
+.top_header .ft {
+  width: 54px;
+}
+
+.top_header .bd {
+  margin-left: 15px;
+}
+
+.top_header .name {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  margin-top: 6px;
+  width: 115px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.top_header .desc {
+  color: #999;
+  font-size: 14px;
+}
+
+.bg-content {
+  border: solid 1px #eee;
+  background-color: #ffffff;
+}
+
+.rtab_active {
+  background-color: #e6f7ff;
+  color: #1890ff;
+  border-right: 2px solid #1890ff;
+}

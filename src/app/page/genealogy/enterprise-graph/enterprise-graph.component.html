@@ -1,0 +1,4 @@
+<tree *ngIf="flag" (clicked)="openModal($event)" [width]="width" [height]="height" [showValue]="flase"
+      [dataset]="dataset"></tree>
+
+<info-modal *ngIf="modalFlag" [data]="modalData" (clicked)="closeModal()" [@modalStatus]="modalStatus"></info-modal>

@@ -1,0 +1,195 @@
+.bg {
+  background: #DEBD6F url("../../../assets/img/bg.png") no-repeat top;
+}
+
+h1 {
+  color: #000000;
+  font-size: 45px;
+  font-family: "Microsoft YaHei";
+}
+
+ul, li {
+  list-style: none;
+  color: #43464F;
+  font-family: "Microsoft YaHei";
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  background: #ffffff;
+  color: #5a5a5a;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  padding: 0 4px;
+}
+
+.index_nav a {
+  width: 20%;
+  height: 128px;
+  background: no-repeat right bottom;
+  overflow: hidden;
+  transition: all .4s ease-in-out;
+}
+
+.index_nav a:nth-of-type(odd) {
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-right: 0;
+}
+
+.index_nav a:nth-of-type(even) {
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-right: 0;
+}
+
+.index_nav a {
+  background-image: url(../../../assets/img/fir.png);
+}
+
+.index_nav a > h2 {
+  font-size: 22px;
+  margin-top: 13px;
+  margin-left: 15px;
+  color: #5c5c5c;
+}
+
+.index_nav a > small {
+  font-size: 14px;
+  margin-top: 50px;
+  margin-left: 15px;
+  color: #8b8b8b;
+}
+
+.index_nav {
+  a:hover {
+    h2 {
+      color: #007BFF !important;
+    }
+    small {
+      color: #007BFF;
+    }
+  }
+}
+
+.more a {
+  font-size: 14px;
+  color: #a1a8ac;
+}
+
+.more a:hover {
+  color: #007BFF;
+}
+
+.hot-content {
+  color: #000;
+  li {
+    color: #000000;
+    background: #fafafa;
+  }
+  .rig-content {
+    .title {
+      font-size: 16px;
+    }
+    .info {
+      color: #58666e;
+      font-size: 14px;
+    }
+  }
+  .rig-content:hover {
+    background-color: #f1f9fe;
+    a {
+      color: #128bed;
+    }
+  }
+}
+
+.com_head {
+  a {
+    color: #666;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    :hover {
+      color: #000;
+    }
+  }
+}
+
+.com_body {
+  p {
+    :hover {
+      color: #007BFF;
+    }
+  }
+  :hover {
+    background-color: #f1f9fe;
+  }
+
+  .com_pro {
+    a {
+      color: #3c4144;
+    }
+  }
+}
+
+.com_work {
+  a {
+    color: #3c4144;
+  }
+  a:hover {
+    color: #007BFF;
+  }
+}
+
+.select_brand {
+  color: #5c5c5c;
+  a:hover {
+    color: #007BFF;
+  }
+}
+
+.com_active {
+  border-bottom: none !important;
+  h2 {
+    color: #000000;
+  }
+}
+
+li {
+  cursor: pointer;
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+  color: #12AAF4;
+}
+
+.suggest-item {
+  padding: 6px 10px;
+  cursor: pointer;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: block;
+  color: #222;
+  position: relative;
+}
+
+.suggest-item a {
+  color: #222;
+  display: block;
+  max-width: 200px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suggest-item:hover {
+  background-color: #e5e9ef;
+}

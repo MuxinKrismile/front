@@ -1,0 +1,29 @@
+li {
+  list-style: none;
+}
+
+.attention_content {
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: #128bed;
+  }
+}
+
+.butn {
+  border: none;
+  color: #128bed;
+  background: none;
+  margin-left: -6px;
+}
+
+.tab_content {
+  cursor: pointer;
+}
+
+.tab_active {
+  color: #1890ff !important;
+  font-weight: 500;
+  border-bottom: 2px solid #1890ff;
+}

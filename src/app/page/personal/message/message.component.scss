@@ -1,0 +1,31 @@
+.message_content {
+  border: 1px solid #e8e8e8;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  background: #fafafa;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.active {
+  background-color: #ffffff;
+  color: #128bed !important;
+}
+
+table{
+  margin-bottom: 0 !important;
+}
+
+.table-primary {
+  background-color: #F2F9FC;
+  width: 20%;
+}
+
+.color-primary {
+  background-color: #F2F9FC;
+}
+
+td {
+  line-height: 20px;
+  font-size: 14px;
+}

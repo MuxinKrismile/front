@@ -1,0 +1,160 @@
+<div class="container mt-3">
+  <div class="mb-4 card rounded-0">
+    <div class="panel panel-default" style="padding: 20px 10px 20px 20px;">
+      <div class="page-title">
+        基本项
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">关键词：</div>
+        <div class="pills-after"><input class="form-control searchkey" type="text" placeholder="输入关键词"></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">企业类型：</div>
+        <div class="pills-after">
+          <a *ngFor="let type of comType;let idx=index" class="pills-item" (click)="selValue(0,idx)"
+             [class.active]="kind[0]==idx">{{type}}</a>
+        </div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">省份：</div>
+        <div class="pills-after">
+          <a *ngFor="let province of provinces;let idx=index" class="pills-item" (click)="selValue(1,idx)"
+             [class.active]="kind[1]==idx">{{province}}</a>
+        </div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">主营行业：</div>
+        <div class="pills-after">
+          <a *ngFor="let work of work;let idx=index" class="pills-item" (click)="selValue(3,idx)"
+             [class.active]="kind[3]==idx">{{work}}</a>
+        </div>
+        <!-- <a class="pills-more">更多 <i class="fa fa-angle-down"></i></a>-->
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">成立年限：</div>
+        <div class="pills-after">
+          <a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="1">1年内</a>
+          <a class="pills-item" data-value="2">1-3年</a> <a class="pills-item" data-value="3">4-10年</a>
+          <a class="pills-item" data-value="4">10年以上</a>
+        </div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">注册资本：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="1">100万以内</a>
+          <a class="pills-item" data-value="2">100-500万</a> <a class="pills-item" data-value="3">500-1000万</a> <a
+            class="pills-item" data-value="4">1000-3000万</a> <a class="pills-item" data-value="5">3000-5000万</a> <a
+            class="pills-item" data-value="x"> <span id="registfundRange" class="dropdown-toggle i-s"
+                                                     data-toggle="dropdown"><span class="x">自定义</span> <span
+            class="caret"></span></span>
+            <section class="dropdown-menu fundrange">
+              <div><span>从</span> <input id="fundStart" class="form-control" type="text"></div>
+              <div><span>至</span> <input id="fundEnd" class="form-control" type="text"></div>
+              <span id="fundBtn">确定</span></section>
+          </a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">电话号码：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="T">有电话</a>
+          <a class="pills-item" data-value="N_T">无电话</a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">公司邮箱：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="E">有邮箱</a>
+          <a class="pills-item" data-value="N_E">无邮箱</a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">专利信息：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="P">有专利</a>
+          <a class="pills-item" data-value="N_P">无专利</a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">商标信息：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="M">有商标</a>
+          <a class="pills-item" data-value="N_M">无商标</a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">融资信息：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="F">已融资</a>
+          <a class="pills-item" data-value="N_F">无融资</a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">上市信息：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="K">已上市</a>
+          <a class="pills-item" data-value="N_K">未上市</a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">失信信息：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="S">有失信信息</a>
+          <a class="pills-item" data-value="N_S">无失信信息</a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">著作权：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item" data-value="C">有著作权</a>
+          <a class="pills-item" data-value="N_C">无著作权</a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">软件著作权：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item"
+                                                                                      data-value="SC">有软件著作权</a> <a
+          class="pills-item" data-value="N_SC">无软件著作权</a></div>
+      </div>
+      <div class="pills d-flex">
+        <div class="pills-header">参数人数：</div>
+        <div class="pills-after"><a class="pills-item active" data-value="">不限</a> <a class="pills-item"
+                                                                                      data-value="0-50">小于50人</a> <a
+          class="pills-item" data-value="50-99">50-99人</a> <a class="pills-item" data-value="100-499">100-499人</a> <a
+          class="pills-item" data-value="500-999">500-999人</a> <a class="pills-item"
+                                                                  data-value="1000-4999">1000-4999人</a> <a
+          class="pills-item" data-value="5000-9999">5000-9999人</a> <a class="pills-item" data-value="10000-99999">10000人以上</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-card class="card rounded-0 mt-4 py-0" style="box-shadow: none">
+    <div class="d-flex justify-content-between">
+      <span class="align-self-center">搜索到 <em>56</em> 位含有 <em>“小米”</em> 的关键字的信息</span>
+      <mat-form-field style="width: 15%">
+        <mat-select [value]="selected">
+          <mat-option value="0">默认排序</mat-option>
+          <mat-option value="1">成立日期升序</mat-option>
+          <mat-option value="2">成立日期降序</mat-option>
+          <mat-option value="3">注册资本升序</mat-option>
+          <mat-option value="4">注册资本降序</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
+    <div class="py-3 d-flex justify-content-between">
+    <span class="align-self-center">
+      小查为您找到 8 家符合条件的企业
+    </span>
+      <button mat-button>导出数据</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="my-2 d-flex justify-content-between">
+      <span>公司</span>
+      <span class="mr-3">状态</span>
+    </div>
+    <div class="d-flex justify-content-between">
+      <mat-divider></mat-divider>
+      <div class="d-flex">
+        <img class="align-self-center mr-4" style="width: 80px; height: 80px"
+             src="https://co-image.qichacha.com/CompanyImage/9cce0780ab7644008b73bc2120479d31.jpg">
+        <div class="py-3">
+          <p class="mb-2"><a style="font-size: 18px; color: black; font-weight: bold">小米科技有限责任公司</a>
+          </p>
+          <p class="f-14 mb-2">法定代表人： <span style="color: #1e99bc">雷军</span><span class="ml-3">注册资本：185000万人民币元</span>
+            <span class="ml-3">成立时间：2010-03-03</span></p>
+          <p class="f-14 mb-2">邮箱：chenchongwei@xiaomi.com <span class="ml-3">电话：010-60606666-1000</span>&nbsp;
+            <a style="color: #007AFC">更多号码</a></p>
+          <p class="f-14 mb-2">地址：北京市海淀区清河中街68号华润五彩城购物中心二期13层</p>
+          <!--<p class="f-14 mb-2"><i class="fa fa-search"></i>法定代表人：<em style="color: #dc3545; font-style: normal">{{c.representname}}</em></p>-->
+        </div>
+      </div>
+      <span class="align-self-center mr-3 nsatus col_work">在业</span>
+    </div>
+  </mat-card>
+</div>
+
+<app-footer></app-footer>

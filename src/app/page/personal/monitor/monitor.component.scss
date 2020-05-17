@@ -1,0 +1,34 @@
+.user-company {
+  a {
+    color: #454545;
+    font-size: 18px;
+  }
+  a:hover {
+    color: #128bed;
+    font-size: 18px;
+  }
+}
+
+.user-detail {
+  font-size: 13px;
+  color: #737373;
+}
+
+.text-over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+::ng-deep .ass-modal .modal-dialog {
+  max-width: 28%;
+  width: 28%;
+}
+
+.table thead tr th{
+  border-bottom: 1px solid #dee2e6
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}

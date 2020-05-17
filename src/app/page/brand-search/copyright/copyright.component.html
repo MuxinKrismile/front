@@ -1,0 +1,33 @@
+<div class="d-flex">
+  <li class="mr-2"><a routerLink="/dashboard">首页</a></li>
+  /
+  <li class="mx-2"><a routerLink="/brands" (click)="selectZx(2)">著作权查询</a></li>
+  /
+  <li class="mx-2">{{searchContent}}著作权查询列表</li>
+</div>
+<mat-card class="card rounded-0 py-0 mt-2" style="box-shadow: none">
+  <div class="py-3">
+    <span class="f-15 text-dark">企信通为您找到<span class="text-danger">84 </span> 位符合条件的人员</span>
+  </div>
+  <div *ngFor="let copyright of copyrights">
+    <mat-divider></mat-divider>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex">
+        <div class="py-3">
+          <p class="mb-2 d-flex">
+            <a class="mr-1"
+               style="font-size: 18px; font-weight: bold" [innerHTML]="copyright.title"></a>
+          </p>
+          <p class="f-14 mb-2" style="color: #888">登记日期：{{copyright.registrationDate}}<span
+            class="ml-3" style="color: #888">登记号：{{copyright.registrationNum}}</span></p>
+          <p class="f-14 mb-2" style="color: #888">创作完成日期：{{copyright.finishDate}}<span
+            class="ml-3" style="color: #888">类别：{{copyright.category}}</span></p>
+          <p class="f-14 mb-2">作品著作权人：<a style="color: #007AFC">{{copyright.worksHolder}}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
+<ngb-pagination class="d-flex mt-4 justify-content-end" [collectionSize]="90" [maxSize]="9"
+                [(page)]="page"></ngb-pagination>
+

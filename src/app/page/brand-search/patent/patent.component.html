@@ -1,0 +1,34 @@
+<div class="d-flex">
+  <li class="mr-2"><a routerLink="/dashboard">首页</a></li>
+  /
+  <li class="mx-2"><a routerLink="/brands" (click)="selectZx(1)">专利查询</a></li>
+  /
+  <li class="mx-2">{{searchContent}}专利查询列表</li>
+</div>
+<mat-card class="card rounded-0 py-0 mt-2" style="box-shadow: none">
+  <div class="py-3">
+    <span class="f-15 text-dark">企信通为您找到<span class="text-danger">28 </span> 位符合条件的人员</span>
+  </div>
+  <div *ngFor="let patent of patents">
+    <mat-divider></mat-divider>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex">
+        <div class="py-3">
+          <p class="mb-2 d-flex">
+            <a routerLink="/brand-search/patent-info" class="mr-1"
+               style="font-size: 18px; font-weight: bold" [innerHTML]="patent.name"></a>
+          </p>
+          <p class="f-14 mb-2" style="color: #888">申请号：{{patent.applicantNum}} <span
+            class="ml-3" style="color: #888">公布号：{{patent.publicantNum}}</span></p>
+          <p class="f-14 mb-2" style="color: #888">类别：{{patent.category}} <span
+            class="ml-3" style="color: #888">申请公布日：{{patent.requestDate}}</span></p>
+          <p class="f-14 mb-2" style="color: #888">发明人：{{patent.inventor}}</p>
+          <p class="f-14 mb-2">申请人：<a style="color: #007AFC">{{patent.applicant}}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
+<ngb-pagination class="d-flex mt-4 justify-content-end" [collectionSize]="30" [maxSize]="3"
+                [(page)]="page"></ngb-pagination>
+

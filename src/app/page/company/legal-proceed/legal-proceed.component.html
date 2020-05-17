@@ -1,0 +1,125 @@
+<div class="mb-2">
+  <div class="d-flex flex-wrap px-2 py-2">
+    <a pageScroll class="my-2 anchor" href="#executor">被执行人信息<span class="ml-1">0</span></a>
+    <a pageScroll class="my-2 anchor">失信被执行人<span class="ml-1">0</span></a>
+    <a pageScroll class="my-2 anchor" href="#adjudicative_documents">裁判文书<span class="ml-1" *ngIf="d&&d.referee">{{this.num[0]+d.referee.length}}</span></a>
+    <a pageScroll class="my-2 anchor">主要成员<span class="ml-1">0</span></a>
+    <a pageScroll class="my-2 anchor" href="#court_announcement">法院公告<span class="ml-1" *ngIf="d&&d.courtNotice">{{this.num[1]+d.courtNotice.length}}</span></a>
+    <a pageScroll class="my-2 anchor" href="#court_bulletin">开庭公告<span class="ml-1" *ngIf="d&&d.openingNotice">{{this.num[2]+d.openingNotice.length}}</span></a>
+    <a pageScroll class="my-2 anchor">司法协助<span class="ml-1">0</span></a>
+  </div>
+  <mat-divider></mat-divider>
+
+  <!--统计分析-->
+  <p class="mt-4 title">统计分析</p>
+  <div class="d-flex">
+    <div echarts [options]="chartOption" theme="macarons" style="width: 50%"></div>
+    <div echarts [options]="option" theme="macarons" style="width: 50%"></div>
+  </div>
+
+  <!--被执行人-->
+  <!-- <p id="executor" class="mt-4 title">被执行人<span class="tbadge">2</span></p>
+   <table class="table mw-100">
+     <tbody>
+     <tr class="color-primary border">
+       <td class="text-center" width="8%">序号</td>
+       <td class="text-center">案号</td>
+       <td class="text-center" width="18%">立案时间</td>
+       <td class="text-center" width="25%">执行法院</td>
+       <td class="text-center" width="10%">执行标的</td>
+     </tr>
+     <tr class="table-bordered" *ngFor="let idx of [1,2,3,4]">
+       <td class="text-center vertical-middle">{{idx}}</td>
+       <td class="text-center vertical-middle"><a class="cliable">(2018)粤0306执4965号</a></td>
+       <td class="text-center vertical-middle">2018-03-16</td>
+       <td class="text-center vertical-middle">深圳市宝安区人民法院</td>
+       <td class="text-center vertical-middle">25</td>
+     </tr>
+     </tbody>
+   </table>-->
+
+  <!--裁判文书-->
+  <p *ngIf="d&&(d.referee.length>0)" id="adjudicative_documents" class="mt-4 title">裁判文书<span class="tbadge">{{this.num[0]+d.referee.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.referee.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center">案件名称</td>
+      <td class="text-center" width="12%">发布时间</td>
+      <td class="text-center" width="15%">案件编号</td>
+      <td class="text-center" width="24%">案件身份</td>
+      <td class="text-center" width="15%">执行法院</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.referee;let idx=index">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="vertical-middle"><a href="#">{{s.name}}</a></td>
+      <td class="text-center vertical-middle">{{s.date}}</td>
+      <td class="text-center vertical-middle">{{s.num}}</td>
+      <td class="vertical-middle" [innerHtml]="s.identity">
+        <!-- <div class="m-b-xs">原告 - <a href="#">小米科技有限责任公司</a></div>
+         <div class="m-b-xs">代理律师事务所 - <a href="#">湖北巨天律师事务所</a></div>
+         <div class="m-b-xs">被告 - <a href="#">邓一兵</a></div>-->
+      </td>
+      <td class="text-center vertical-middle">{{s.court}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <ngb-pagination *ngIf="d&&(d.referee.length>0)" class="d-flex mt-4 justify-content-end"
+                  [collectionSize]="this.num[0]+d.referee.length" [maxSize]="10"
+                  [(page)]="page"></ngb-pagination>
+
+  <!--法院公告-->
+  <p *ngIf="d&&(d.courtNotice.length>0)" id="court_announcement" class="mt-0 title">法院公告<span class="tbadge">{{this.num[1]+d.courtNotice.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.courtNotice.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center">当事人</td>
+      <td class="text-center" width="13%">公告类型</td>
+      <td class="text-center" width="20%">公告人</td>
+      <td class="text-center" width="14%">刊登时间</td>
+      <td class="text-center" width="13%">内容</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.courtNotice;let idx=index">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="text-center vertical-middle">{{s.party}}</td>
+      <td class="text-center vertical-middle">{{s.type}}</td>
+      <td class="text-center vertical-middle">{{s.announcer}}</td>
+      <td class="text-center vertical-middle">{{s.date}}</td>
+      <td class="text-center vertical-middle"><a href="#">{{s.content}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <ngb-pagination *ngIf="d&&(d.courtNotice.length>0)" class="d-flex mt-4 justify-content-end"
+                  [collectionSize]="this.num[1]+d.courtNotice.length" [maxSize]="10"
+                  [(page)]="page"></ngb-pagination>
+
+  <!--开庭公告-->
+  <p *ngIf="d&&(d.openingNotice.length>0)" id="court_bulletin" class="mt-0 title">开庭公告<span class="tbadge">{{this.num[2]+d.openingNotice.length}}</span>
+  </p>
+  <table *ngIf="d&&(d.openingNotice.length>0)" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="8%">序号</td>
+      <td class="text-center" width="20%">案号</td>
+      <td class="text-center" width="12%">开庭日期</td>
+      <td class="text-center">案由</td>
+      <td class="text-center" width="21%">公诉人/原告/上诉人/申请人</td>
+      <td class="text-center" width="26%">被告人/被告/被上诉人/被申请人</td>
+    </tr>
+    <tr class="table-bordered" *ngFor="let s of d.openingNotice;let idx=index">
+      <td class="text-center vertical-middle">{{idx+1}}</td>
+      <td class="text-center vertical-middle"><a class="cliable">{{s.num}}</a></td>
+      <td class="text-center vertical-middle">{{s.date}}</td>
+      <td class="text-center vertical-middle">{{s.cause}}</td>
+      <td class="text-center vertical-middle">{{s.source}}</td>
+      <td class="text-center vertical-middle">{{s.target}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <ngb-pagination *ngIf="d&&(d.openingNotice.length>0)" class="d-flex mt-4 justify-content-end"
+                  [collectionSize]="this.num[2]+d.openingNotice.length" [maxSize]="10"
+                  [(page)]="page"></ngb-pagination>
+</div>

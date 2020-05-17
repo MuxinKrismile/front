@@ -1,0 +1,256 @@
+<div class="mb-2">
+  <div class="d-flex flex-wrap px-2 py-2">
+    <a pageScroll href="#business-information" class="my-2 anchor">工商信息</a>
+    <a *ngIf="d && d.shareholder_information" pageScroll href="#shareholder-information" class="my-2 anchor">股东信息</a>
+    <a *ngIf="d && d.outbound_investment" pageScroll href="#foreign-investment" class="my-2 anchor">对外投资</a>
+    <a *ngIf="d && d.main_personnel" pageScroll href="#main-staff" class="my-2 anchor">主要成员</a>
+    <a *ngIf="d && d.branch" pageScroll href="#branches" class="my-2 anchor">分支机构</a>
+    <a *ngIf="d && d.change_record" pageScroll href="#change-log" class="my-2 anchor">变更记录</a>
+    <a *ngIf="d && d.company && d.company.introduction" pageScroll href="#company-profile" class="my-2 anchor">公司简介</a>
+    <a pageScroll class="my-2 anchor">最终受益人</a>
+    <a class="my-2 anchor">控股企业</a>
+  </div>
+  <mat-divider></mat-divider>
+
+  <!--工商信息-->
+
+  <p id="business-information" class="mt-4 title">工商信息</p>
+
+  <table *ngIf="d" class="table table-bordered mw-100">
+    <tbody>
+    <tr>
+      <td>法定代表人信息</td>
+      <td>企业关联图谱</td>
+      <td>股权结构图</td>
+    </tr>
+    <tr>
+      <td class="no_bottom_border">
+        <div class="mt-2 d-flex flex-column justify-content-between">
+          <div *ngIf="d.boss_info" class="d-flex align-self-center">
+            <img style="height: 54px; width: 54px" class="mr-3" src="{{d.boss_info.avator}}">
+            <div class="d-flex flex-column justify-content-between">
+              <a (click)="goToBoss(d.boss_info.id)">{{d.boss_info.name}}</a>
+              <a class="associate">他关联 {{d.boss_info.count}} 家公司 ></a>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td class="no_bottom_border">
+        <div class="d-flex flex-column">
+          <img class="align-self-center" style="height: auto; width: 267px"
+               src="https://www.qichacha.com/material/theme/chacha/cms/v2/images/icon_gltp@2x.png">
+        </div>
+      </td>
+      <td class="no_bottom_border">
+        <div class="d-flex flex-column">
+          <img class="align-self-center" style="height: auto; width: 267px"
+               src="../../../../assets/img/structure_img.png">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="no_top_border text-center">
+        <button class="btn btn-primary align-self-center" (click)="openLg(0, d.boss_info.id)">查看人物图谱</button>
+      </td>
+      <td class="no_top_border text-center">
+        <button routerLink="/genealogy" class="btn btn-primary align-self-center">查看详情</button>
+      </td>
+      <td class="no_top_border text-center">
+        <button class="btn btn-primary align-self-center" (click)="openLg(1, d.company.id)">查看详情</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table *ngIf="d && d.company" class="table table-bordered">
+    <tbody>
+    <tr>
+      <td class="table-primary">注册资本</td>
+      <td>{{d.company.capital}}</td>
+      <td class="table-primary">实缴资本：</td>
+      <td>{{d.base_info.paidCapital}}</td>
+    </tr>
+    <tr>
+      <td class="table-primary">经营状态：</td>
+      <td>{{d.base_info.openStatus}}</td>
+      <td class="table-primary">成立日期：</td>
+      <td>{{d.company.foundTime | date: 'yyyy-MM-dd'}}</td>
+    </tr>
+    <tr>
+      <td class="table-primary">统一社会信用代码：</td>
+      <td>{{d.base_info.socialCreditCode}}</td>
+      <td class="table-primary">纳税人识别号：</td>
+      <td>{{d.base_info.taxpayerIdentificationNumber}}</td>
+    </tr>
+    <tr>
+      <td class="table-primary">注册号：</td>
+      <td>{{d.base_info.registrationNumber}}</td>
+      <td class="table-primary">组织机构代码：</td>
+      <td>{{d.base_info.organizationCode}}-2</td>
+    </tr>
+    <tr>
+      <td class="table-primary">公司类型：</td>
+      <td>{{d.base_info.typeOfCompany}}</td>
+      <td class="table-primary">所属行业：</td>
+      <td>{{d.base_info.industry}}</td>
+    </tr>
+    <tr>
+      <td class="table-primary">核准日期：</td>
+      <td>{{d.base_info.dateOfApproval | date: 'yyyy-MM-dd'}}</td>
+      <td class="table-primary">登记机关：</td>
+      <td>{{d.base_info.registrationAuthority}}</td>
+    </tr>
+    <tr>
+      <td class="table-primary">所属地区：</td>
+      <td>{{d.base_info.region}}</td>
+      <td class="table-primary">英文名：</td>
+      <td>{{d.base_info.englishName}}</td>
+    </tr>
+    <tr>
+      <td class="table-primary">曾用名：</td>
+      <td>{{d.base_info.nameUsedBefore}}</td>
+      <td class="table-primary">参保人数：</td>
+      <td>{{d.base_info.numberOfParticipants}}</td>
+    </tr>
+    <tr>
+      <td class="table-primary">人员规模：</td>
+      <td>{{d.base_info.personnelScale}}</td>
+      <td class="table-primary">营业期限：</td>
+      <td>{{d.base_info.timeLimitForBusiness}}</td>
+    </tr>
+    <tr>
+      <td class="table-primary">企业地址：</td>
+      <td colspan="3">{{d.base_info.enterpriseAddress}}</td>
+    </tr>
+    <tr>
+      <td style="width: 15%; vertical-align: middle;" class="table-primary">经营范围：</td>
+      <td colspan="3">
+        {{d.base_info.scopeOfOperation}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--股东信息-->
+  <p *ngIf="d && d.shareholder_information.length > 0" id="shareholder-information" class="title">股东信息</p>
+
+  <table *ngIf="d && d.shareholder_information.length > 0" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td class="text-center" width="60">序号</td>
+      <td class="text-center" width="370">股东</td>
+      <td class="text-center" width="90">持股比例</td>
+      <td class="text-center" width="160">认缴出资额（万元）</td>
+      <td class="text-center" width="115">认缴出资日期</td>
+    </tr>
+    <tr *ngFor="let si of d.shareholder_information; let i = index" class="table-bordered">
+      <td class="text-center">{{i + 1}}</td>
+      <td>
+        <a class="cliable">{{si.shareholderName}}</a>
+        <a *ngIf="si.count > 0" class="associate">他关联 {{si.count}} 家公司></a>
+      </td>
+      <td class="text-center">{{si.ratio}}</td>
+      <td class="text-center">{{si.contribution}}</td>
+      <td class="text-center">{{si.date}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--对外投资统计分析-->
+  <p class="title">对外投资统计分析</p>
+
+  <div class="d-flex">
+    <div echarts [options]="chartOption" style="width: 50%"></div>
+    <div echarts [options]="options" style="width: 50%"></div>
+  </div>
+
+  <!--对外投资-->
+  <p *ngIf="d && d.outbound_investment.length > 0" id="foreign-investment" class="title">对外投资</p>
+  <table *ngIf="d && d.outbound_investment.length > 0" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td width="27%" class="text-center">被投资企业名称</td>
+      <td width="28%" class="text-center">被投资法定代表人</td>
+      <td width="15%" class="text-center">注册资本</td>
+      <td width="10%" class="text-center">出资比例</td>
+      <td class="text-center">成立日期</td>
+      <td width="7%" class="text-center">状态</td>
+    </tr>
+    <tr *ngFor="let idx of d.outbound_investment" class="table-bordered">
+      <td class="text-center vertical-middle"><a class="cliable">{{idx.source }}</a></td>
+      <td class="vertical-middle">
+        <a class="cliable">{{idx.target }}</a>
+        <a *ngIf="idx.target.length < 15" class="associate">对外投资与任职></a>
+      </td>
+      <td class="text-center vertical-middle">{{idx.capital}}</td>
+      <td class="text-center vertical-middle">{{idx.ratio}}</td>
+      <td class="text-center vertical-middle">{{idx.foundTime}}</td>
+      <td [ngClass]="{'text-success': idx.status==='存续' || idx.status==='在业', 'text-danger': idx.status==='注销'}"
+          class="text-center vertical-middle text-success text-danger">{{idx.status}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--分支机构-->
+  <p *ngIf="d && d.branch.length>0" id="branches" class="title">分支机构</p>
+  <table *ngIf="d && d.branch" class="table mw-100">
+    <tbody>
+    <tr *ngFor="let i of rangeArray(0, d.branch.length - 1)" class="table-bordered">
+      <td width="6%" class="text-center color-primary">{{i+1}}</td>
+      <td width="44%" class="text-center"><a class="cliable">{{d.branch[i].name}}</a></td>
+
+      <td width="6%" *ngIf="i+2<=d.branch.length" class="text-center color-primary">{{i+2}}</td>
+      <td width="44%" *ngIf="i+2<=d.branch.length" class="text-center"><a class="cliable">{{d.branch[i + 1].name}}</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--主要人员-->
+  <p *ngIf="d && d.main_personnel.length > 0" id="main-staff" class="title">主要人员</p>
+  <table *ngIf="d && d.main_personnel.length > 0" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td width="50" class="text-center">序号</td>
+      <td width="320" class="text-center">姓名</td>
+      <td width="300" class="text-center">职务</td>
+    </tr>
+    <tr *ngFor="let i of d.main_personnel; let idx = index" class="table-bordered">
+      <td class="text-center">{{idx + 1}}</td>
+      <td>
+        <a class="cliable">{{i.name}}</a>
+        <a class="associate">他关联 {{i.count}} 家公司></a>
+      </td>
+      <td class="text-center">{{i.position}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--变更记录-->
+  <p *ngIf="d && d.change_record && d.change_record.length > 0" id="change-log" class="title">变更记录</p>
+  <table *ngIf="d && d.change_record && d.change_record.length > 0" class="table mw-100">
+    <tbody>
+    <tr class="color-primary border">
+      <td width="7%" class="text-center">序号</td>
+      <td width="12%" class="text-center">变更日期</td>
+      <td class="text-center">变更项目</td>
+      <td class="text-center">变更前</td>
+      <td class="text-center">变更后</td>
+    </tr>
+    <tr *ngFor="let i of d.change_record; let idx = index" class="table-bordered">
+      <td class="text-center vertical-middle">{{idx + 1}}</td>
+      <td class="text-center vertical-middle">{{i.date}}</td>
+      <td width="23%" class="text-center vertical-middle" [innerHTML]="i.project | safeHTML"></td>
+      <td class="vertical-middle" [innerHTML]="i.before | safeHTML"></td>
+      <td class="vertical-middle" [innerHTML]="i.after | safeHTML"></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--公司简介-->
+  <p *ngIf="d && d.company.introduction && d.company.introduction.length > 0" id="company-profile" class="title">公司简介</p>
+  <div *ngIf="d && d.company.introduction && d.company.introduction.length > 0" [innerHTML]="d.company.introduction | safeHTML"
+       class="p-3 f-14 border"></div>
+
+</div>

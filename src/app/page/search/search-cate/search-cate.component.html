@@ -1,0 +1,86 @@
+<div class="mb-4 card rounded-0">
+  <div class="d-flex com_head">
+    <a class="com_active text-center f-14 px-4-5 py-2-5 clear_left_border"
+       [ngClass]="{'com_active': k==0, 'clear_left_border': k==0}" (click)="k=0">公司</a>
+    <a class="com_active text-center f-14 px-4-5 py-2-5" [class.com_active]="k==1" (click)="k=1">风险信息</a>
+    <a class="com_active text-center f-14 px-4-5 py-2-5" [class.com_active]="k==2" (click)="k=2">知识产权</a>
+  </div>
+
+  <div class="p-2">
+    <div class="mt-1 d-flex">
+      <button mat-button disabled class="btn-head">查找范围</button>
+      <div>
+        <button mat-button *ngFor="let range of ranges;let idx=index" (click)="selValue(0,idx)"
+                [class.cate_active]="kind[0]==idx">{{range}}
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-1 d-flex">
+      <button mat-button disabled class="btn-head">机构类型</button>
+      <div>
+        <button mat-button *ngFor="let type of types;let idx=index" (click)="selValue(1,idx)"
+                [class.cate_active]="kind[1]==idx">{{type}}
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-1 d-flex">
+      <button mat-button disabled class="btn-head">企业状态</button>
+      <div style="max-width: 80%">
+        <button mat-button *ngFor="let staue of staues;let idx=index" (click)="selValue(2,staue)"
+                [class.cate_active]="kind[2]==staue">{{staue}}
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-1 d-flex">
+      <button mat-button disabled class="btn-head">注册资本</button>
+      <div>
+        <button mat-button *ngFor="let capital of capitals;let idx=index" (click)="selValue(3,idx)"
+                [class.cate_active]="kind[3]==idx">{{capital}}
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-1 d-flex">
+      <div class="d-flex">
+        <button mat-button disabled class="btn-head">成立日期</button>
+        <div>
+          <button mat-button *ngFor="let date of dates;let idx=index" (click)="selValue(4,date)"
+                  [class.cate_active]="kind[4]==date">{{date}}
+          </button>
+        </div>
+      </div>
+      <!--<a class="more ml-auto pt-2 mr-3">更多<i class="fa fa-angle-down"></i></a>-->
+    </div>
+
+    <div class="mt-1 d-flex">
+      <div class="d-flex">
+        <button mat-button disabled class="btn-head">省份地区</button>
+        <div>
+          <button mat-button *ngFor="let province of provinces;let idx=index" (click)="selValue(5,province)"
+                  [class.cate_active]="kind[5]==province">{{province}}
+          </button>
+        </div>
+      </div>
+     <!-- <a class="more ml-auto pt-2 mr-3">更多<i class="fa fa-angle-down"></i></a>-->
+    </div>
+
+    <!--<div class="mt-1 d-flex">
+      <div class="d-flex">
+        <button mat-button disabled class="btn-head">行业门类</button>
+        <div>
+          <button mat-button *ngFor="let work of works;let idx=index" (click)="selValue(6,idx)"
+                  [class.cate_active]="kind[6]==idx">{{work}}
+          </button>
+        </div>
+      </div>
+      <a class="more ml-auto pt-2 mr-3">更多<i class="fa fa-angle-down"></i></a>
+    </div>-->
+
+  </div>
+
+
+</div>
+

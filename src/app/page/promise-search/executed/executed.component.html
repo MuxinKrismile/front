@@ -1,0 +1,31 @@
+<div class="d-flex">
+  <li class="mr-2"><a routerLink="/dashboard">首页</a></li>
+  /
+  <li class="mx-2"><a routerLink="/promise" (click)="selectZx(1)">被执行人查询</a></li>
+  /
+  <li class="mx-2">{{searchContent}}被执行人查询列表</li>
+</div>
+<mat-card class="card rounded-0 py-0 mt-2" style="box-shadow: none">
+  <div class="py-3">
+    <span class="f-15 text-dark">企信通为您找到<span class="text-danger font-weight-bold"> 20 </span>位符合条件的被执行人</span>
+  </div>
+  <div *ngFor="let executed of executeds">
+    <mat-divider></mat-divider>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex">
+        <div class="py-3">
+          <p class="mb-2 d-flex">
+            <a routerLink="/promise-search/executed-info" class="mr-1"
+               style="font-size: 18px; font-weight: bold" [innerHtml]="executed.name"></a>
+          </p>
+          <p class="f-14 mb-2" style="color: #888">案号：{{executed.caseNum}}</p>
+          <p class="f-14 mb-2" style="color: #888">标的：{{executed.subject}}<span
+            class="ml-3" style="color: #888">立案日期：{{executed.caseDate}}</span></p>
+          <p class="f-14 mb-2">执行法院：{{executed.executiveCourt}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
+<ngb-pagination class="d-flex mt-4 justify-content-end" [collectionSize]="20" [maxSize]="2"
+                [(page)]="page"></ngb-pagination>

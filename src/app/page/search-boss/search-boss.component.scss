@@ -1,0 +1,64 @@
+.bg {
+  background: #DEBD6F url("../../../assets/img/bg.png") no-repeat top;
+}
+
+h1 {
+  color: #000000;
+  font-size: 45px;
+  font-family: "Microsoft YaHei";
+}
+
+ul, li {
+  list-style: none;
+  color: #000000;
+  font-family: "Microsoft YaHei";
+}
+
+.hot {
+  a {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #000000;
+  }
+  .hot-title {
+    border: 1px solid #000000;
+  }
+
+}
+
+.hot-person {
+  .person-title {
+    a {
+      color: #737373;
+    }
+    a:hover {
+      color: #0084ff;
+    }
+  }
+  .person-time {
+    color: #b4b4b9;
+  }
+}
+
+.suggest-item {
+  padding: 6px 10px;
+  cursor: pointer;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: block;
+  color: #222;
+  position: relative;
+}
+
+.suggest-item a {
+  color: #222;
+  display: block;
+  max-width: 200px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suggest-item:hover {
+  background-color: #e5e9ef;
+}

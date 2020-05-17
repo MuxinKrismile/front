@@ -1,0 +1,49 @@
+<mat-card style="box-shadow: none;padding: 0" class="card rounded-0">
+  <h4 class="m-3 ml-2">监控企业</h4>
+  <table *ngIf="d&&d.length" class="table table-hover b-light" style="margin-bottom: 0">
+    <thead>
+    <tr>
+      <th width="10%">企业名称</th>
+      <th width="15%">开始监控时间</th>
+      <th width="10%">监控</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let idx of d">
+      <td>
+        <div class="user-company">
+          <a (click)="selectCompany(idx.cid)">{{idx.name}}</a>
+        </div>
+        <div class="user-detail text-over mt-2">
+          <span class="pr-2 text-over mx">法定代表人：<span>{{idx.boss}}</span></span>
+          <span class="pr-2 text-over mx">状态：<span>{{idx.status}}</span></span>
+        <!--  <span class="pr-2-over mx">行业：<span>科技推广和应用服务业</span></span>-->
+        </div>
+      </td>
+      <td style="padding-top: 28px">{{idx.date}}</td>
+      <td class="pl-3" style="padding-top: 28px"><i (click)="openModal(idx.id)" class="fa fa-eye"
+                                       style="font-size: 26px;color: #F7B30F"></i></td>
+     <!-- <ng-template #delMonitor let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title">移除监控</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <div style="font-size:38px"><i class="fa fa-trash-o mr-2" style="color: #128bed"></i>确定移除?</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" (click)="c('Save click')">确认</button>
+        </div>
+      </ng-template>-->
+    </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!(d&&d.length)" class="text-center" style="padding-top: 100px;margin-bottom: 100px;border-top: 1px solid #e0e3ec">
+    <img src="http://icon.qiantucdn.com/img/searchnew/nores.png" width="100" alt="">
+    <div class="mt-2">暂无相关记录</div>
+  </div>
+</mat-card>

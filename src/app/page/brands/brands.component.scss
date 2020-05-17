@@ -1,0 +1,30 @@
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}
+
+.jumbotron {
+  margin-top: 40px;
+  background-color: #F4F4F4;
+  padding: 40px 0 50px;
+  text-align: center;
+}
+
+.clogo {
+  font-size: 55px;
+  margin-bottom: 40px;
+}
+
+.rea-tab li {
+  font-size: 22px;
+  display: inline-block;
+}
+
+.active {
+  color: #128bed;
+  border-bottom: 2px solid #128bed;
+}

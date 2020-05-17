@@ -1,0 +1,67 @@
+<div class="d-flex mb-2">
+  <li class="mr-2"><a routerLink="/dashboard">首页</a></li>
+  /
+  <li class="mx-2"><a routerLink="/promise">失信人查询</a></li>
+  /
+  <li class="mx-2"><a routerLink="/promise-search/lostpro">{{searchContent}}失信人查询列表</a></li>
+  /
+  <li class="mx-2">失信人查询详情</li>
+</div>
+<section *ngIf="d&&d.body" class="panel panel-default patentdetailbox" id="searchlist" [innerHtml]="d.body | safeHTML">
+  <!--<table class="table  table-bordered">
+    <tbody>
+    <tr>
+      <td width="30%">名称：</td>
+      <td><a class="text-primary" href="/pl_pdbd6bb2a141bb0b16791279654a2a37.html">
+        孙小米
+      </a></td>
+    </tr>
+    <tr>
+      <td width="30%">法人名称：</td>
+      <td>
+        -
+      </td>
+    </tr>
+    <tr>
+      <td width="30%">身份证号码/组织机构代码：</td>
+      <td>4301221965****4914</td>
+    </tr>
+    <tr>
+      <td width="30%">执行依据文号：</td>
+      <td>（2009）岳民初字第01337号民事判决书</td>
+    </tr>
+    <tr>
+      <td width="30%">案号：</td>
+      <td>(2009)岳执字第00812号</td>
+    </tr>
+    <tr>
+      <td width="30%">做出执行依据单位：</td>
+      <td>岳法</td>
+    </tr>
+    <tr>
+      <td width="30%">法律生效文书确定的义务：</td>
+      <td>限被告在判决生效之日起三日内向原告偿还借款20万元及利息</td>
+    </tr>
+    <tr>
+      <td width="30%">被执行人的履行情况：</td>
+      <td>全部未履行</td>
+    </tr>
+    <tr>
+      <td width="30%">执行法院：</td>
+      <td>长沙市岳麓区人民法院</td>
+    </tr>
+    <tr>
+      <td width="30%">省份：</td>
+      <td>湖南</td>
+    </tr>
+    <tr>
+      <td width="30%">立案时间：</td>
+      <td>2009-11-18</td>
+    </tr>
+    <tr>
+      <td width="30%">发布时间：</td>
+      <td>2015-07-06</td>
+    </tr>
+    </tbody>
+  </table>-->
+</section>

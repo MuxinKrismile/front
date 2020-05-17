@@ -1,0 +1,373 @@
+li {
+  list-style: none;
+}
+a {
+  color: #000;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #4289FF;
+  cursor: pointer;
+}
+
+.panel {
+  border-radius: 0;
+}
+
+.panel-default {
+  border-color: #ddd;
+}
+
+.panel {
+  background-color: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+
+::ng-deep .ntable{
+  width:100%;margin: 0 auto;margin-bottom:20px;
+}
+::ng-deep .ntable th{
+  text-align:center;background:#F2F9FC;border:#E4EEF6 1px solid;border-collapse: collapse;
+  padding:12px 12px 12px 12px;
+  font-weight: normal;
+  color: #444;
+  line-height: 19px;
+}
+::ng-deep .ntable th:not(:last-child){
+  border-right:#F2F9FC 1px solid;
+}
+::ng-deep .ntable th.tl{
+  text-align: left;
+}
+::ng-deep .ntable th.tr{
+  text-align: right;
+}
+
+::ng-deep .ntable td{
+  padding:10px 10px 11px 10px;border:#E4EEF6 1px solid;word-break:break-all;font-size:14px;
+  line-height: 1.6;
+  color: #222;
+}
+::ng-deep .ntable td.hlh{
+  line-height: 1.8;
+}
+::ng-deep .ntable .tb{
+  background: #F2F9FC;
+}
+::ng-deep .ntable .tx{
+  text-align: center;
+  width: 59px;
+}
+::ng-deep .ntable .ti{
+  text-align: left;
+  padding-left: 32px;
+}
+::ng-deep .ntable .ti i{
+  position: absolute;
+  margin-left: -26px;
+  margin-top: -3px;
+}
+::ng-deep .ntable em{
+  color: #e33244;
+}
+
+::ng-deep .ntable-ne em{
+  color: #222;
+}
+::ng-deep .ntable a{
+  color: #128bed;
+}
+::ng-deep .ntable a:hover{
+  color: #007add;
+}
+::ng-deep .ntable .tblank{
+  margin-top: 15px;
+}
+::ng-deep .ntable .tblank>th{
+  border: none;
+  background: none;
+}
+::ng-deep .ntable .tsub>th{
+  border:#E4EEF6 1px solid;
+}
+::ng-deep .ntable tr .ch{
+  cursor: pointer;
+}
+::ng-deep .ntable tr:hover .ch, ::ng-deep .ntable tr.active .ch{
+  color: #128bed;
+  background: #F2F9FC;
+}
+::ng-deep .ntable .btn-touzi{
+  color: #F5A623 !important;
+  float: right;
+  font-size: 14px;
+}
+::ng-deep .ntable .blank{
+  border:none;
+  padding: 5px;
+}
+
+::ng-deep .ntable-list .title{
+  color: #222;
+  font-size: 16px;
+}
+::ng-deep .ntable-list .subtitle{
+  color: #999;
+  font-size: 15px;
+}
+::ng-deep .ntable-list td:hover{
+  background: #F5F9FF;
+}
+::ng-deep .ntable-list td:hover .title{
+  color: #128bed;
+}
+::ng-deep .ntable-odd tr:nth-child(odd){
+  background: #fff
+}
+::ng-deep .ntable-even tr:nth-child(even){
+  background: #FAFDFE
+}
+::ng-deep .ntable-sm th{
+  padding-right: 3px;
+}
+::ng-deep .ntable-sm td{
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 3px;
+}
+::ng-deep .ntable td h3{display: inline;font-weight: normal;font-size: 14px;}
+
+::ng-deep .ntable-lev td{
+  text-align: right;
+}
+::ng-deep .ntable-lev .lev1{
+  font-size: 14px;
+  color: #222;
+  text-align: left;
+  font-weight: 600;
+}
+::ng-deep .ntable-lev .lev2{
+  text-align: left;
+  padding-left: 26px;
+}
+::ng-deep .ntable .headimg{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  border-radius: 6px;
+  float: left;
+  margin-right: 10px;
+}
+::ng-deep .ntable .headimg>img{
+  width: 100%;
+  border-radius: 6px;
+}
+::ng-deep .ntable .headn{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 6px;
+  float: left;
+  margin-right: 10px;
+}
+::ng-deep .ntable .headn[first-letter]:not([style]):empty:before{
+  color: #fff !important;
+  font-size: 16px;
+  line-height: 40px;
+}
+::ng-deep .ntable .whead-text{
+  width: 260px;
+  margin-left: 10px;
+  height: 40px;
+  display: table-cell;
+  vertical-align: middle;
+}
+::ng-deep .ntable-stext tr,::ng-deep .ntable-stext td{
+  padding-left: 8px;
+  padding-right: 5px;
+  font-size: 12px;
+}
+.tdpath{
+  line-height: 28px;
+  margin-bottom: 6px;
+}
+.tdpath>div{
+  color: #222;
+  font-weight: 600;
+}
+.tdpath>a{
+  color: #333;
+}
+.tdpath>span{
+  display: inline-block;
+  width: 84px;
+  height: 26px;
+  //background: url(../images/line_arrow@2x.png) no-repeat right bottom;
+  background-size: 75px 8px;
+  padding-bottom: 10px;
+  font-size: 12px;
+  color: #128bed;
+  text-align: center;
+  position: relative;
+  top: -9px;
+  margin-right: 6px;
+}
+::ng-deep .ptable{
+  width:100%;margin: 0 auto;margin-bottom:20px;
+}
+::ng-deep .ptable th{
+  background:#F2F9FC;
+  border:#eee 1px solid;
+  border-collapse: collapse;
+  padding:12px 5px 12px 12px;
+  font-weight: normal;
+  color: #444;
+  line-height: 19px;
+}
+::ng-deep .ptable th:not(:last-child){
+  border-right:#F2F9FC 1px solid;
+}
+::ng-deep .ptable th.tl{
+  text-align: left;
+}
+::ng-deep .ptable th.tr{
+  text-align: right;
+}
+
+::ng-deep .ptable tr:hover{
+  background: #f6f6f6;
+}
+::ng-deep .ptable.nohover tr:hover{
+  background: transparent;
+}
+::ng-deep .ptable.hline td:not(:last-child){
+  border-right:#eee 1px solid;
+}
+
+::ng-deep .ptable td{
+  padding:12px 5px 12px 12px;
+  border:#eee 1px solid;word-break:break-all;font-size:14px;
+  line-height: 19px;
+  color: #222;
+}
+::ng-deep .ptable td:not(:last-child){
+  border-right:transparent 1px solid;
+}
+::ng-deep .ptable td.tb{
+  background:#F2F9FC;
+}
+::ng-deep .ptable img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+::ng-deep .ptable td>a{
+  color: #128bed;
+}
+
+::ng-deep .ptable .himgwrap{
+  width: 262px;
+  height: 162px;
+  padding: 6px;
+  border: solid 1px #00000033;
+  box-shadow: 0px 2px 4px #00000033;
+  position: absolute;
+  background: #fff;
+  margin-top: 6px;
+  margin-left: 35px;
+  display: none;
+}
+::ng-deep .ptable .himgwrap>img{
+  width: 250px;
+  height: 150px;
+  border-radius: 0px;
+}
+::ng-deep .ptable .himg:hover>.himgwrap{
+  display: block;
+}
+::ng-deep .ptable-list .img{
+  width: 80px;
+  height: 60px;
+  border-radius: 2px;
+  border:solid 1px #eee;
+}
+::ng-deep .ptable-list .img>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+::ng-deep .ptable-list .title{
+  display: block;
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+::ng-deep .ptable-list .time{
+  color: #999;
+}
+::ng-deep .ptable-list tr:hover{
+  background: #F3F9FE;
+}
+::ng-deep .ptable-list tr:hover a.title{
+  color: #128bed;
+}
+.pdrop{
+  position: relative;
+}
+.pdrop .btn{
+  border: solid 1px #D6D6D6;
+}
+
+/*历史序列*/
+::ng-deep .e_history{
+  position: relative;
+  float: left;
+}
+::ng-deep .e_history .ea_item{
+  width: 100%;
+  float: left;
+}
+::ng-deep .e_history .ea_item > div {
+  width: 100%;
+  float: left;
+  margin-bottom:4px;
+}
+::ng-deep .e_history .ea_item .ea_num{
+  border-radius: 100%;
+  border:#9E9E9E 1px solid;
+  width:22px;height:22px;line-height: 21px;
+  font-size:14px;
+  color:#9E9E9E;
+  float: left;
+  text-align: center;
+}
+::ng-deep .e_history .ea_item .ea_last{
+  border-color:#128bed;
+  color:#128bed;
+}
+::ng-deep .e_history .ea_item .ea_date{
+  margin-left:10px;
+  line-height: 22px;
+  float: left;
+}
+::ng-deep .e_history .ea_item .ea_line{
+  height:30px;
+  width:1px;
+  background-color: #9E9E9E;
+  margin-left:11px;
+  float: left;
+}
+::ng-deep .e_history .ea_item .ea_content{
+  height:30px;
+  line-height: 30px;
+  margin-left:30px;
+}

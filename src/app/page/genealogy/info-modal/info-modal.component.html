@@ -1,0 +1,84 @@
+<mat-card class="p-3 card">
+  <div class="d-flex justify-content-lg-between">
+    <span class="company-info">公司信息</span>
+    <span (click)="close()"><i class="fa fa-times close"></i></span>
+  </div>
+  <div class="mt-3 d-flex justify-content-lg-between">
+    <a class="company-name">{{data.Name}}</a>
+    <div><span class="company-status ml-2">{{data.ShortStatus}}</span></div>
+  </div>
+  <div class="mt-3">
+    <span class="line">法定代表人： <a href="#">{{data.Oper.Name}}</a></span>
+  </div>
+  <div class="mt-1">
+    <span class="line">注册资本： {{data.RegistCapi}}</span>
+  </div>
+  <div class="mt-1">
+    <span class="line">成立日期： {{data.StartDate}}</span>
+  </div>
+  <button class="btn btn-primary mt-3 rounded-2 w-100">查看图谱</button>
+
+  <div class="mt-2">
+    <div class="d-flex com_head border-top border-left border-right">
+      <a class="com_active text-center f-14 py-2 clear_left_border flex-grow-1"
+         [ngClass]="{'com_active': k==0, 'clear_left_border': k==0}" (click)="k=0">公司</a>
+      <a class="com_active text-center f-14 py-2 flex-grow-1" [class.com_active]="k==1" (click)="k=1">对外投资</a>
+      <a class="com_active text-center f-14 py-2 flex-grow-1"
+         [ngClass]="{'com_active': k==2, 'clear_right_border': k==2}" (click)="k=2">主要人员</a>
+    </div>
+
+    <div *ngIf="k==0" class="mt-1 over">
+      <table *ngIf="data.Partners" class="table-bordered table">
+        <tbody>
+        <tr class="header">
+          <td>名称</td>
+          <td>类型</td>
+        </tr>
+        <tr *ngFor="let x of data.Partners">
+          <td>{{x.StockName}}</td>
+          <td class="kind">{{x.StockType}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="!data.Partners" class="mt-1">
+        <div class="mt-5 d-flex flex-column align-items-center">
+          <img style="width: 80px" src="https://www.qichacha.com/material/theme/chacha/cms/v2/images/nodata.png">
+        </div>
+        <p class="text-center f-12 mt-1">暂无信息</p>
+      </div>
+    </div>
+
+    <div *ngIf="k==1" class="mt-1">
+      <div class="mt-5 d-flex flex-column align-items-center">
+        <img style="width: 80px" src="https://www.qichacha.com/material/theme/chacha/cms/v2/images/nodata.png">
+      </div>
+      <p class="text-center f-12 mt-1">暂无信息</p>
+    </div>
+
+    <div *ngIf="k==2" class="mt-1 over">
+      <table *ngIf="data.Employees" class="table-bordered table">
+        <tbody>
+        <tr class="header">
+          <td>名称</td>
+          <td>类型</td>
+        </tr>
+        <tr *ngFor="let x of data.Employees">
+          <td>{{x.Name}}</td>
+          <td class="kind">{{x.Job}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="!data.Employees" class="mt-1">
+        <div class="mt-5 d-flex flex-column align-items-center">
+          <img style="width: 80px" src="https://www.qichacha.com/material/theme/chacha/cms/v2/images/nodata.png">
+        </div>
+        <p class="text-center f-12 mt-1">暂无信息</p>
+      </div>
+    </div>
+    </div>
+
+</mat-card>
+
+

@@ -1,0 +1,40 @@
+<div class="d-flex">
+  <li class="mr-2"><a routerLink="/dashboard">首页</a></li>
+  /
+  <li class="mx-2"><a routerLink="/brands">商标查询</a></li>
+  /
+  <li class="mx-2">{{searchContent}}商标查询列表</li>
+</div>
+<mat-card *ngIf="trademarks" class="card rounded-0 py-0 mt-2" style="box-shadow: none">
+  <div class="py-3">
+    <span class="f-15 text-dark">企信通为您找到<span class="text-danger">{{trademarks.length}} </span> 位符合条件的人员</span>
+  </div>
+  <div *ngFor="let trademark of trademarks;">
+    <mat-divider></mat-divider>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex">
+        <img *ngIf="trademark._source.src.length > 0" class="align-self-center mr-4" style="width: 120px; height: 80px"
+             src="{{trademark._source.src}}">
+        <img *ngIf="trademark._source.src.length == 0" class="align-self-center mr-4" style="width: 120px; height: 80px"
+             src="../../../../assets/img/brand-default.png">
+        <div class="py-3">
+          <p class="mb-2 d-flex">
+            <a class="mr-1" (click)="selBrandInfo(trademark._id)"
+               style="font-size: 18px; color: #e33244; font-weight: bold">{{trademark._source.name}}</a>
+            <span class="nstatus" *ngIf="trademark._source.status">{{trademark._source.status}}</span>
+          </p>
+          <p class="f-14 mb-2">注册号： <span style="color: #1e99bc">{{trademark._source.num}}</span><span
+            class="ml-3">申请日期：{{trademark._source.date}}</span></p>
+          <p class="f-14 mb-2">类别：{{trademark._source.kind}}</p>
+          <p class="f-14 mb-2" *ngIf="trademark._source.applicant">申请人：<a style="color: #007AFC">{{trademark._source.applicant}}</a>
+          </p>
+          <!--<p class="f-14 mb-2"><i class="fa fa-search"></i>法定代表人：<em style="color: #dc3545; font-style: normal">{{c.representname}}</em></p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
+<!--<ngb-pagination *ngIf="trademarks" class="d-flex mt-4 justify-content-end" [collectionSize]="50" [maxSize]="5"
+                [(page)]="page"></ngb-pagination>-->
+
+

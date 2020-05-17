@@ -1,0 +1,111 @@
+
+.company-info {
+  padding-left: 5px;
+  border-left: 2px solid #0093E7;
+  color: #999999;
+  font-size: 14px;
+}
+
+.close {
+  cursor: pointer;
+  color: #999999;
+}
+
+.company-name {
+  color: #128bed !important;
+  font-size: 16px;
+}
+
+.company-status {
+  padding: 5px 8px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 2px;
+  background: #4ca0ff;
+}
+
+.line {
+  font-size: 14px;
+  color: #999999;
+}
+
+.rounded-2 {
+  border-radius: 2px;
+}
+
+.com_head {
+  border-bottom: 1px solid #ddd;
+  background-color: #fcfcfd;
+  a {
+    color: #666;
+
+  }
+  a:hover {
+    color: #128cec;
+  }
+}
+
+.com_active {
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  background: #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -2px;
+  color: #128cec !important;
+  font-weight: 700;
+}
+
+.clear_left_border {
+  border-left: none !important;
+}
+
+.clear_right_border {
+  border-right: none !important;
+}
+
+.table td {
+  padding: 8px;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.table .header {
+  background-color: #F0F7FD;
+  color: #999999;
+}
+
+.table .kind {
+  color: #999999;
+}
+
+mat-card {
+  width: 300px;
+  max-height: 570px;
+}
+
+.over {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.over::-webkit-scrollbar { //滚动条的宽度
+  width: 5px;
+  height: 9px;
+}
+
+.over::-webkit-scrollbar-track-piece { //滚动条凹槽的颜色，还可以设置边框属性
+  background-color: #f8f8f8;
+}
+
+.over::-webkit-scrollbar-thumb { //滚动条的设置
+  background-color: #dddddd;
+  background-clip: padding-box;
+  min-height: 28px;
+}
+
+table {
+  margin-bottom: 0;
+}

@@ -1,0 +1,271 @@
+<div class="container-fluid bg" style="margin-top: -20px">
+  <div class="row flex-column">
+    <h1 class="align-self-center mb-5 mt-5" style="color: #5a5a5a">企信通，点亮您的商业梦！</h1>
+    <ul class="align-self-center d-flex  mb-2">
+      <li [class.active]="kind==0" class="mr-5 f-16 active" (click)="changeKind(0)" data-index="0">全部</li>
+      <li [class.active]="kind==1" class="mr-5 f-16 active" (click)="changeKind(1)" data-index="2">企业名</li>
+      <li [class.active]="kind==2" class="mr-5 f-16 active" (click)="changeKind(2)" data-index="4">法人/股东</li>
+      <li [class.active]="kind==3" class="mr-5 f-16 active" (click)="changeKind(3)" data-index="6">高管</li>
+      <li [class.active]="kind==4" class="mr-5 f-16 active" (click)="changeKind(4)" data-index="8">品牌/产品</li>
+      <li [class.active]="kind==5" class="mr-5 f-16 active" (click)="changeKind(5)" data-index="10">地址/电话</li>
+      <li [class.active]="kind==6" class="mr-5 f-16 active" (click)="changeKind(6)" data-index="12"> 经营范围</li>
+    </ul>
+    <div class="align-self-stretch d-flex justify-content-center mb-2">
+      <div class="d-flex" style="width: 60%">
+        <div ngbDropdown class="d-flex flex-column w-100" #myDrop="ngbDropdown">
+          <input #input ngbDropdownAnchor id="dropdownManual" name="q" class="rounded-0 flex-grow-1"
+                 style="font-size: 14px;border: none;text-indent: 12px;max-height: 48px" autocomplete="off"
+                 placeholder={{holder}} [ngModel]="key" (ngModelChange)="keyChanged($event)"
+                 (keydown)="onKeydown($event)">
+          <div ngbDropdownMenu aria-labelledby="dropdownManual">
+            <ul class="pl-0 py-0 m-0" [ngStyle]="{'width': width + 'px'}">
+              <li class="suggest-item" (click)="click(item.id)" *ngFor="let item of items">{{item.name}}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="input-group-btn btn-group-lg">
+          <button style="width: 80px" class="btn btn-info rounded-0" (click)="search()"><i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <!--<a class="align-self-center ml-2" style="color:#5a5a5a" routerLink="/high-search">高级搜索</a>-->
+    </div>
+    <div class="align-self-center d-flex justify-content-between mt-5 mb-5">
+      <p><span id="hot_data_label" style="color: #5a5a5a">热搜：</span>
+        <span>
+          <a class="f-16 px-2" style="color: #5a5a5a" href="#">中青旅</a>
+          <a class="f-16 px-2" style="color: #5a5a5a" href="#">美团收购摩拜</a>
+          <a class="f-16 px-2" style="color: #5a5a5a" href="#">杨子黄圣依</a>
+          <a class="f-16 px-2" style="color: #5a5a5a" href="#">抖音</a>
+          <a class="f-16 px-2" style="color: #5a5a5a" href="#">海航集团</a>
+        </span>
+        <a class="px-2" style="color: #5a5a5a">
+          <span><i class="fa fa-refresh"></i></span>&nbsp;换一批</a></p>
+    </div>
+  </div>
+</div>
+<!--五个小版块-->
+<div class="container mt-3 px-0 card rounded-0" style="background: #ffffff">
+  <div class="pt-3">
+    <h3 class="text-center" style="font-size: 24px;">专项查询</h3>
+    <div style="border-bottom: 1px solid #ddd" class="pt-2"></div>
+    <div class="d-flex py-3 px-3">
+      <div class="mx-2 px-2 py-3 d-flex justify-content-center flex-grow-1">
+        <a (click)="selSpecial(0)" class="link select_brand" data-original-title="一键查询企业股东、高管">
+          <div class="d-flex justify-content-center pb-2"><img src="../../../assets/img/brand.png"
+                                                               style="width:60px;height: 60px"/></div>
+          <a>商标查询</a>
+        </a>
+      </div>
+      <div class="mx-2 px-2 py-3 d-flex justify-content-center flex-grow-1">
+        <a (click)="selSpecial(1)" class="link select_brand" data-original-title="一键查询企业股东、高管">
+          <div class="d-flex justify-content-center pb-2"><img src="../../../assets/img/patent.png"
+                                                               style="width:60px;height: 60px"/></div>
+          <a>专利查询</a>
+        </a>
+      </div>
+      <div class="mx-2 px-2 py-3 d-flex justify-content-center flex-grow-1">
+        <a (click)="selSpecial(2)" class="link select_brand" data-original-title="一键查询企业股东、高管">
+          <div class="d-flex justify-content-center  pb-2"><img src="../../../assets/img/financing.png"
+                                                                style="width:60px;height: 60px"/></div>
+          <a>著作权查询</a>
+        </a>
+      </div>
+      <div class="mx-2 px-2 py-3 d-flex justify-content-center flex-grow-1">
+        <a (click)="selPromise(0)" class="link select_brand" data-original-title="一键查询企业股东、高管">
+          <div class="d-flex justify-content-center pb-2"><img src="../../../assets/img/break.png"
+                                                               style="width:60px;height: 60px"/></div>
+          <a>失信信息</a>
+        </a>
+      </div>
+      <div class="mx-2 px-2 py-3 d-flex justify-content-center flex-grow-1">
+        <a (click)="selPromise(2)" class="link select_brand" data-original-title="一键查询企业股东、高管">
+          <div class="d-flex justify-content-center pb-2"><img src="../../../assets/img/referee.png"
+                                                               style="width:60px;height: 60px"/></div>
+          <a>裁判文书</a>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--热门头条和热门推荐-->
+<div class="container mt-3 px-0" *ngIf="recommend&&headline">
+  <div class="d-flex">
+    <div class="col-md-6 pr-3 pl-0">
+      <div class="card pt-3 px-3 rounded-0">
+        <div class="d-flex pb-3">
+          <div class="f-15 text-dark font-weight-bold">热门头条</div>
+          <div class="ml-auto more"><a href="#">查看更多&gt;</a></div>
+        </div>
+        <mat-divider style="margin:0 -1rem"></mat-divider>
+        <ul class="hot-content pl-0 pt-4">
+          <li class="d-flex mb-3" *ngFor="let s of headline" (click)="findNews(s.ref)">
+            <div>
+              <img src="{{s.img}}"
+                   style="width: 225px;height: 130px" title="{{s.title}}"
+                   alt="{{s.title}}">
+            </div>
+            <div class="rig-content flex-grow-1 pl-3">
+              <p class="mb-2 mt-4"><a class="title">{{s.title}}</a></p>
+              <p class="d-flex info">
+                <span>{{s.from}}</span>
+                <span class="ml-auto mr-2">{{s.time}}</span>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 pl-3 pr-0">
+      <div class="card pt-3 px-3 rounded-0">
+        <div class="d-flex pb-3">
+          <div class="f-15 text-dark font-weight-bold">热门推荐</div>
+          <div class="ml-auto more"><a href="#">查看更多&gt;</a></div>
+        </div>
+        <mat-divider style="margin:0 -1rem"></mat-divider>
+        <ul class="hot-content pl-0 pt-4">
+          <li class="d-flex mb-3" *ngFor="let s of recommend" (click)="findNews(s.ref)">
+            <div>
+              <img src="{{s.img}}"
+                   style="width: 225px;height: 130px" title="{{s.title}}"
+                   alt="{{s.title}}">
+            </div>
+            <div class="rig-content flex-grow-1 pl-3">
+              <p class="mb-2 mt-4"><a class="title">{{s.title}}</a></p>
+              <p class="d-flex info">
+                <span>{{s.from}}</span>
+                <span class="ml-auto mr-2">{{s.time}}</span>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--公司有关信息查询-->
+<div class="container mt-3 px-0">
+  <div class="card rounded-0 pb-3">
+    <div class="d-flex com_head">
+      <a class="flex-grow-1 com_active" [class.com_active]="k==0" (click)="k=0"><h2
+        class="font-weight-bold my-3 f-15 text-center">最新注册公司</h2></a>
+      <a class="flex-grow-1 com_active" [class.com_active]="k==1" (click)="k=1"><h2
+        class="font-weight-bold my-3 f-15 text-center">最新认证公司</h2></a>
+      <a class="flex-grow-1 com_active" [class.com_active]="k==2" (click)="k=2"><h2
+        class="font-weight-bold my-3 f-15 text-center">按区域查公司</h2></a>
+      <a style="margin-right: -1px" class="flex-grow-1 com_active" [class.com_active]="k==3" (click)="k=3"><h2
+        class="font-weight-bold my-3 f-15 text-center">
+        按行业查公司</h2></a>
+    </div>
+    <div *ngIf="k==0">
+      <div class="d-flex py-3 px-3 com_body">
+        <div style="width: 25%" class="mx-2 py-3 border">
+          <div class="text-center mb-2"><a class="f-14">深圳市天全农产品有限公司</a></div>
+          <div class="text-center mb-0 f-13" style="color: #a1a8ac">成立日期：2018-07-26</div>
+        </div>
+        <div style="width: 25%" class="mx-2 py-3 border">
+          <div class="text-center mb-2"><a class="f-14">深圳市特发京兰投资发展有限公司</a></div>
+          <div class="text-center mb-0 f-13" style="color: #a1a8ac">成立日期：2018-07-26</div>
+        </div>
+        <div style="width: 25%" class="mx-2 py-3 border">
+          <div class="text-center mb-2"><a class="f-14">贵州锦天城房地产开发有限公司</a></div>
+          <div class="text-center mb-0 f-13" style="color: #a1a8ac">成立日期：2018-07-26</div>
+        </div>
+        <div style="width: 25%" class="mx-2 py-3 border">
+          <div class="text-center mb-2"><a class="f-14">深圳市中科智慧物联科技有限公司</a></div>
+          <div class="text-center mb-0 f-13" style="color: #a1a8ac">成立日期：2018-07-26</div>
+        </div>
+      </div>
+      <div class="d-flex px-3 com_body">
+        <div style="width: 25%" class="mx-2 py-3 border">
+          <p class="text-center mb-2"><a class="f-14">深圳中科天地实业发展有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">成立日期：2018-07-26</p>
+        </div>
+        <div style="width: 25%" class="mx-2 py-3 border">
+          <p class="text-center mb-2"><a class="f-14">开迪(深圳)新能源科技有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">成立日期：2018-07-26</p>
+        </div>
+        <div style="width: 25%" class="mx-2 py-3 border">
+          <p class="text-center mb-2"><a class="f-14">深圳市宝岭矿业投资有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">成立日期：2018-07-26</p>
+        </div>
+        <div style="width: 25%" class="mx-2 py-3 border">
+          <p class="text-center mb-2"><a class="f-14">汉能移动能源科技(深圳)有限公...</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">成立日期：2018-07-26</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="k==1">
+      <div class="d-flex py-3 px-3 com_body">
+        <div class="mx-2 py-3 flex-grow-1 border">
+          <p class="text-center mb-2"><a>深圳鑫嘉美胶业有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">认证人：马云</p>
+        </div>
+        <div class="mx-2 py-3 flex-grow-1 border">
+          <p class="text-center mb-2"><a>深圳鑫嘉美胶业有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">认证人：马云</p>
+        </div>
+        <div class="mx-2 py-3 flex-grow-1 border">
+          <p class="text-center mb-2"><a>深圳鑫嘉美胶业有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">认证人：马云</p>
+        </div>
+        <div class="mx-2 py-3 flex-grow-1 border">
+          <p class="text-center mb-2"><a>深圳鑫嘉美胶业有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">认证人：马云</p>
+        </div>
+      </div>
+      <div class="d-flex px-3 com_body">
+        <div class="mx-2 py-3 flex-grow-1 border">
+          <p class="text-center mb-2"><a>深圳鑫嘉美胶业有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">认证人：马云</p>
+        </div>
+        <div class="mx-2 py-3 flex-grow-1 border">
+          <p class="text-center mb-2"><a>深圳鑫嘉美胶业有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">认证人：马云</p>
+        </div>
+        <div class="mx-2 py-3 flex-grow-1 border">
+          <p class="text-center mb-2"><a>深圳鑫嘉美胶业有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">认证人：马云</p>
+        </div>
+        <div class="mx-2 py-3 flex-grow-1 border">
+          <p class="text-center mb-2"><a>深圳鑫嘉美胶业有限公司</a></p>
+          <p class="text-center mb-0 f-13" style="color: #a1a8ac">认证人：马云</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="k==2">
+      <div class="d-flex flex-wrap pt-3 px-3 com_body">
+        <li *ngFor="let province of provinces" class="text-center d-block com_pro" style="min-width: 10%"><a href="#">{{province}} </a>
+        </li>
+      </div>
+    </div>
+    <div *ngIf="k==3">
+      <div class="py-3 px-3">
+        <div class="d-flex align-items-center my-2 py-2 com_work">
+          <div class="col-md-4"><h4 class=""><a href="#"> 农、林、牧、渔业 </a></h4>
+          </div>
+          <div class="col-md-8 d-flex flex-wrap">
+            <a *ngFor="let work of ['林业','畜牧业','渔业','农、林、牧、渔专业及辅助性活动']" href="#" class="mr-3">{{work}}</a>
+          </div>
+        </div>
+        <div class="d-flex align-items-center my-2 py-2 com_work">
+          <div class="col-md-4"><h4 class=""><a href="#"> 农、林、牧、渔业 </a></h4>
+          </div>
+          <div class="col-md-8 d-flex flex-wrap">
+            <a *ngFor="let work of ['林业','畜牧业','渔业','农、林、牧、渔专业及辅助性活动']" href="#" class="mr-3">{{work}}</a>
+          </div>
+        </div>
+        <div class="d-flex align-items-center my-2 py-2 com_work">
+          <div class="col-md-4"><h4 class=""><a href="#"> 农、林、牧、渔业 </a></h4>
+          </div>
+          <div class="col-md-8 d-flex flex-wrap">
+            <a *ngFor="let work of ['林业','畜牧业','渔业','农、林、牧、渔专业及辅助性活动']" href="#" class="mr-3">{{work}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

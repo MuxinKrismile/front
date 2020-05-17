@@ -1,0 +1,43 @@
+<!--<div class="row" *ngFor="let a of [1,2,3,4]"
+     style="background-color: white; height: auto;   margin: 8px 0;padding: 16px">
+
+  <div style="background-color: #E5E5E6; height: 150px" class="col-3"></div>
+
+  <div style="height: auto" class="col-9">
+    <div class="row" style="margin: 0 0 8px;">
+      <div class="circle"></div>
+      <div
+        style="background-color: #E5E5E6; margin-left: 5px; margin-top: 4px; margin-bottom: 4px; width: 30% "></div>
+    </div>
+    <div style="background-color: #E5E5E6; height: 22px; margin-bottom: 5px"></div>
+    <div style="background-color: #E5E5E6; height: 60px; margin-bottom: 5px"></div>
+    <div style="background-color: #E5E5E6; height: 18px; margin-bottom: 5px; width: 50%"></div>
+  </div>
+</div>-->
+
+<div class="row article-list" style="background-color: white;margin: 8px 0;padding: 16px" *ngFor="let a of [1,2,3,4]">
+
+  <div class="col-3 px-0" style="align-self: center !important;">
+    <a><img src="http://pic.tendcode.com/article/180429/phantomjs.png" style="max-width: 100%"></a>
+  </div>
+
+  <div class="col-9">
+    <div class="text-muted mb-2 f-12">
+      <img class="avatar" src="http://www.tendcode.com/media/avatar/2018/04/14/30201215.jpg" alt="Hopetree">
+      <span>Hopetree</span>
+      <span><i class="fa fa-calendar-times-o ml-2 mr-1"></i>1&nbsp;周，5&nbsp;日 之前</span>
+    </div>
+    <h2 class="mt-0 font-weight-bold text-info f-17">
+      <a href="#" target="_blank">使用 selenium 写的多进程全网页截图工具，发现了 PhantomJS 截图的 bug</a>
+    </h2>
+    <p class="d-none d-sm-block mb-2 f-15">selenium 是一个可以模拟浏览器操作的工具，据我所知，不仅仅是 Python，还有其他的编程语言也有支持的 selenium
+      库，可以作为爬虫或者自动化测试。当然，还有今天要说的，可以使用 selenium 来作为全网页截图工具。</p>
+    <div class="text-muted mb-0 f-12">
+      <a class="cate" href="#" title="查看当前分类下更多文章">
+        <i class="fa fa-book mr-1"></i>Python 爬虫</a>
+      <span><i class="fa fa-eye ml-2 mr-1"></i>45</span>
+      <a href="#" target="_blank" title="查看文章评论">
+        <i class="fa fa-comments ml-2 mr-1"></i>1</a>
+    </div>
+  </div>
+</div>

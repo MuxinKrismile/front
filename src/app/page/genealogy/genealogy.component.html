@@ -1,0 +1,23 @@
+<div style="background-color: #ffffff !important;margin-top: -18px;overflow: hidden">
+  <div class="header">
+    <div class="container">
+      <div class="d-flex">
+        <a routerLink="/company" class="text-primary f-14 mr-5"><i class="fa fa-backward mr-1" aria-hidden="true"></i>{{title}}</a>
+
+        <a [class.selected]="selector===0" routerLink="/genealogy/enterprisegraph" (click)="changePage(0)"
+           class="ml-5 selector selected">企业图谱</a>
+        <a [class.selected]="selector===1" routerLink="/genealogy/investmentgraph" (click)="changePage(1)"
+           class="selector selected">投资图谱</a>
+        <a [class.selected]="selector===2" routerLink="/genealogy/associationgraph" (click)="changePage(2)"
+           class="selector selected">关联图谱</a>
+        <a [class.selected]="selector===3" routerLink="/genealogy/equitystructuregraph" (click)="changePage(3)"
+           class="selector selected">股权结构图</a>
+        <a [class.selected]="selector===4" routerLink="/genealogy/suspectedcontroller" (click)="changePage(4)"
+           class="selector selected">疑似控制人</a>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+</div>

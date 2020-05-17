@@ -1,0 +1,51 @@
+<div class="promise-title">
+  <div class="container">
+    <div class="top-search-nav d-flex">
+      <div class="py-2 pb-1 d-flex">
+        <a [class.pactive]="kind==0" (click)="selectPromise(0)" routerLink="/brand-search/brand-body">商标</a>
+        <a [class.pactive]="kind==1" (click)="selectPromise(1)" routerLink="/brand-search/patent">专利</a>
+        <a [class.pactive]="kind==2" (click)="selectPromise(2)" routerLink="/brand-search/copyright">著作权</a>
+        <a [class.pactive]="kind==3" (click)="selectPromise(3)" routerLink="/brand-search/software">软件著作权</a>
+        <div ngbDropdown class="mt-2">
+          <a ngbDropdownToggle>更多</a>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <a class="dropdown-item" routerLink="/company">公司</a>
+            <a class="dropdown-item" (click)="changeSpItem(0)" routerLink="/promise-search/lostpro">失信人</a>
+            <a class="dropdown-item" (click)="changeSpItem(1)" routerLink="/promise-search/executed">被执行人</a>
+            <a class="dropdown-item" (click)="changeSpItem(2)" routerLink="/promise-search/referee">裁判文书</a>
+          </div>
+        </div>
+      </div>
+      <div class="ml-2 mt-2">
+        <div class="input-group">
+          <input type="text" class="form-control input-lg" style="font-size: 14px;" placeholder="请输入你想要查找的内容"
+                 autocomplete="off" value="{{searchContent}}" [(ngModel)]="searchContent" (keydown)="onKeydown($event)">
+          <span class="input-group-btn"><button type="submit" class="input-lg fa fa-search f-17"
+                                                (click)="selBrand()"></button> </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-lg-9 col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-lg-3 col-md-12" style="margin-top: 2rem">
+      <div class="f-bg">
+        <div class="p-3" style="font-size: 18px">您可能感兴趣的公司</div>
+        <div class="company_content">
+          <a href="#" class="list-group-item d-flex">邵阳宝中旅游国际旅行社有限责任公司武冈庆丰营业部</a>
+          <a href="#" class="list-group-item d-flex">上海中科后勤服务有限公司浦东汽车修理厂</a>
+          <a href="#" class="list-group-item d-flex">廊坊洁永工业有限公司北京洁永橱柜分公司</a>
+          <a href="#" class="list-group-item d-flex">四川天弘建筑劳务有限公司重庆分公司</a>
+          <a href="#" class="list-group-item d-flex">中山市东凤镇喜聚昌电器厂</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

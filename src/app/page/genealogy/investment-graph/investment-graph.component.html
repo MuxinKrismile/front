@@ -1,0 +1,25 @@
+<tree *ngIf="flag" (clicked)="openModal($event)" [width]="width" [height]="height" [showValue]="true" [layer]="layer" [onlyEnd]="false"
+      [dataset]="dataset"></tree>
+
+<info-modal *ngIf="modalFlag" [data]="modalData" (clicked)="closeModal()" [@modalStatus]="modalStatus"></info-modal>
+
+<div *ngIf="flag" class="tip" style="color: #666666">
+  <span class="f-14 mr-3">对外投资层级：
+    <select [(ngModel)]="layer">
+    <option value="1">一层</option>
+    <option value="2">二层</option>
+    <option value="3">三层</option>
+    <option value="4">四层</option>
+  </select>
+  </span>
+
+  <span class="f-14">股东层级：
+    <select>
+    <option value="1">一层</option>
+    <option value="2">二层</option>
+    <option value="3">三层</option>
+    <option value="4">四层</option>
+  </select>
+  </span>
+
+</div>

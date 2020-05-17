@@ -1,0 +1,30 @@
+
+button {
+  font-size: 14px !important;
+  width: auto !important;
+  min-width: auto;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.nsatus {
+  font-weight: normal;
+  display: inline-block;
+  line-height: 16px;
+  font-size: 14px;
+  padding: 4px 8px 4px 8px;
+  border-radius: 2px;
+  border: 1px solid;
+}
+
+.col_work {
+  //color: #009944;
+  color: #1e99bc;
+}
+
+:host ::ng-deep em {
+  font-style: normal;
+  color: #e33244;
+}

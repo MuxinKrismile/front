@@ -1,0 +1,34 @@
+<div class="jumbotron">
+  <div class="container-fluid">
+    <div class="row flex-column mb-5">
+      <div class="clogo">{{title}}搜索</div>
+      <ul class="align-self-center d-flex mb-2 rea-tab">
+        <li [class.active]="kind==0" class="mr-5 f-16" (click)="changeKind(0)" data-index="0">失信人</li>
+        <li [class.active]="kind==1" class="mr-5 f-16" (click)="changeKind(1)" data-index="1">被执行人</li>
+        <li [class.active]="kind==2" class="mr-5 f-16" (click)="changeKind(2)" data-index="2">裁判文书</li>
+      </ul>
+      <div class="align-self-stretch d-flex justify-content-center mb-2">
+        <div class="input-group input-group-lg" style="max-width: 60%">
+          <input type="search" name="q" class="form-control rounded-0" (keydown)="onKeydown($event)"
+                 style="font-size: 14px;border: none"
+                 placeholder="{{holder}}" [(ngModel)]="searchContent">
+          <div class="input-group-btn btn-group-lg">
+            <button style="width: 80px" class="btn btn-info rounded-0" (click)="changeTab()"><i
+              class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 100px">
+      <div class="col-md-4"><img src="../../../assets/img/icon1.png">
+        <h2>毫秒查询&nbsp;&nbsp;节省更多时间</h2></div>
+      <div class="col-md-4"><img src="../../../assets/img/icon2.png">
+        <h2>数据全面 &nbsp;&nbsp;提供更多数据</h2></div>
+      <div class="col-md-4"><img src="../../../assets/img/icon3.png">
+        <h2>精确匹配&nbsp;&nbsp;命中目标信息</h2></div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

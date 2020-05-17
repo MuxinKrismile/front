@@ -1,0 +1,12 @@
+<graph *ngIf="flag" (open)="openModal($event)" (close)="closeModal()" [nodes]="nodes" [links]="links"></graph>
+
+<info-modal *ngIf="modalFlag" [data]="modalData" (clicked)="closeModal()" [@modalStatus]="modalStatus"></info-modal>
+
+<div *ngIf="flag" class="footer d-flex justify-content-center border-top">
+  <div class="mx-3"><span class="fa fa-circle mx-1" style="color:#ff9e00"></span> <span>当前结点</span></div>
+  <div class="mx-3"><span class="fa fa-circle mx-1" style="color:#4ea2f0"></span> <span>企业</span></div>
+  <div class="mx-3"><span class="fa fa-circle mx-1" style="color:#FD485E"></span> <span>人员</span></div>
+  <div class="mx-3"><span class="fa fa-long-arrow-right mx-1" style="color:#fd485e"></span> <span>投资</span></div>
+  <div class="mx-3"><span class="fa fa-long-arrow-right mx-1" style="color:#4ea2f0;"></span><span>任职</span></div>
+</div>
+

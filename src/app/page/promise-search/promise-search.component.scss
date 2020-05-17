@@ -1,0 +1,229 @@
+a {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4289FF;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.f-bg {
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 2px #bbb;
+  -moz-box-shadow: 0 1px 2px #bbb;
+  box-shadow: 0 1px 2px #bbb;
+}
+
+em {
+  font-style: normal;
+  color: #e33244;
+}
+
+li {
+  list-style: none;
+}
+
+.f-bdr {
+  border-top: 1px solid #dfdfdf;
+}
+
+.btn-head {
+  color: #EC6C47 !important;
+}
+
+.pills-more {
+  color: #979797;
+}
+
+.pills-header, .pills-item {
+  font-size: 14px;
+}
+
+/*搜寻的老板*/
+.boss-wrap {
+  border: 1px solid #eaeef1;
+  box-sizing: border-box;
+}
+
+.boss-head {
+  width: 54px;
+  height: 54px;
+  border-radius: 4px;
+}
+
+.boss-name {
+  font-size: 20px;
+  color: #000;
+}
+
+.myicon {
+  color: #DEDEDE;
+  width: 10px;
+  height: 15px;
+}
+
+.partner-head {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.partner-warp {
+  padding: 10px 6px 10px 10px !important;
+  background: #fff;
+  border: 1px solid #f1f1f1;
+}
+
+.partner-name {
+  margin-left: 8px;
+  color: #000;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.partner-com {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.usericon {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  overflow: visible;
+  border: 1px solid rgba(0, 0, 0, .06);
+  border-radius: 50%;
+}
+
+.boss-headn {
+  width: 54px;
+  height: 54px;
+  border-radius: 6px;
+  background: #EFEFEF;
+}
+
+.usericon[first-letter]:not([style]):empty:before {
+  content: attr(first-letter);
+  font-size: 26px;
+  height: 60px;
+  line-height: 55px;
+  color: #95A5A6;
+  font-weight: 500;
+}
+
+.partner-letter {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: #EFEFEF;
+}
+
+.partner-letter:before {
+  line-height: 40px !important;
+  height: 40px !important;
+  font-size: 20px !important;
+  color: #999 !important;
+}
+
+.avatar {
+  img {
+    border-radius: 6px;
+  }
+}
+
+.title {
+  color: #333;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.text-gray {
+  color: #999;
+}
+
+.pills-header {
+  width: 72px;
+}
+
+.pills-after {
+  a:hover {
+    background-color: #128bed;
+    color: #ffffff;
+  }
+  a:focus {
+    background-color: #128bed;
+    color: #ffffff;
+  }
+}
+
+.active {
+  background-color: #128bed;
+  color: #ffffff !important;
+}
+
+.company_content {
+  a {
+    color: #666666 !important;
+  }
+}
+
+.company_content a:hover {
+  background-color: #f1f9fe;
+  color: #128bed !important;
+}
+
+.nstatus {
+  line-height: 16px;
+  font-size: 14px;
+  padding: 4px 8px 4px 8px;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  color: #138496;
+}
+
+.promise-title {
+  margin-top: -18px;
+  background-color: #ffffff;
+  padding: 0rem 0.5rem 0;
+
+}
+
+.top-search-nav {
+  margin-top: 0;
+  border: none;
+}
+
+.top-search-nav a {
+  padding: 7px 5px 5px;
+  margin-right: 20px;
+  color: #333;
+  font-size: 15px;
+  border: none;
+}
+
+.pactive {
+  font-weight: normal;
+  background-color: #ffffff;
+  color: #000000 !important;
+  border-bottom: 2px solid #0084FF !important;
+}
+
+.input-group .form-control {
+  width: 490px;
+  height: 36px;
+}
+
+.input-group .input-group-btn button {
+  height: 34px;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  color: #128bed;
+}

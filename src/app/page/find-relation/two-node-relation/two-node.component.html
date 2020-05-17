@@ -1,0 +1,82 @@
+<div class="px-3 flex-grow-1">
+  <h5 class="font-weight-bold pt-3">关联路径</h5>
+
+  <app-node-search *ngFor="let x of rangeArray(0, line)" [MaxLine]="line" [Current]="x" (add)="add($event)"
+                   (emitter)="recieve($event, x)"></app-node-search>
+
+  <div class="py-3">
+    <span class="f-14">显示路径数</span>
+    <div class="row">
+      <div class="col-md-10 pr-0">
+        <input [ngStyle]="{'background-size': boxWidth+'% 100%'}" type="range" value="{{value1}}" max="10"
+               min="0" step="1" [ngModel]="value1" (ngModelChange)="changeValue($event)"/>
+      </div>
+      <div class="col-md-2" style="margin-top: 1px">{{value1}}</div>
+    </div>
+  </div>
+  <!--开始分析按钮-->
+  <button (click)="begin()" class="btn btn-info mt-3" style="width: 100%;">开始分析</button>
+  <div class="mt-3" style="border-bottom: 1px solid #ddd"></div>
+  <div *ngIf="true" class="py-3">
+    <div class="d-flex">
+      <h5 class="font-weight-bold pb-3">路径详情</h5>
+      <div class="ml-auto f-14">找到1条路径</div>
+    </div>
+    <div class="py-1">
+      <div class="d-flex py-2 px-2 panel-all mb-1">
+        <div>路径1</div>
+        <a *ngIf="showPath" class="d-inline-flex ml-auto" (click)="showPath=!showPath">3站<i
+          class="fa fa-angle-right align-self-center pl-1"></i></a>
+        <a *ngIf="showPath" class="d-inline-flex ml-auto" (click)="showPath=!showPath">3站<i
+          class="fa fa-angle-down align-self-center pl-1"></i></a>
+      </div>
+      <div *ngIf="showPath" class="mt-1">
+        <ul class="ana-timeline">
+          <li class="d-flex">
+            <div class="point"></div>
+            <div class="mr-auto content">
+              <div class="com">雷军</div>
+              <div class="member">执行董事</div>
+            </div>
+          </li>
+          <li class="d-flex">
+            <div class="point"></div>
+            <div class="mr-auto content">
+              <div class="com">小米商业保理(天津)有限责任公司</div>
+              <div class="member">法人,总经理,总经理</div>
+            </div>
+          </li>
+          <li class="d-flex">
+            <div class="point"></div>
+            <div class="mr-auto content">
+              <div class="com">洪锋</div>
+              <div class="member"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="border-bottom: 1px solid #ddd"></div>
+  <div class="py-3">
+    <h5 class="font-weight-bold">搜索历史</h5>
+    <div class="d-flex">
+      <ul class="list-group rel-history flex-grow-1">
+        <li class="list-group-item selPerson d-inline-flex">
+          <a class="d-inline-flex flex-column align-items-center flex-grow-1" href="#">
+            <div>小米技术责任有限公司【雷军】</div>
+            <i class="fa fa-long-arrow-down"></i>
+            <div>北京小米支付技术有限公司【洪峰】</div>
+          </a>
+        </li>
+        <li class="list-group-item selPerson d-inline-flex">
+          <a class="d-inline-flex flex-column align-items-center flex-grow-1" href="#">
+            <div>合宝文娱集团有限公司【李斐】</div>
+            <i class="fa fa-long-arrow-down"></i>
+            <div>北京阿里巴巴技术有限公司【马云】</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

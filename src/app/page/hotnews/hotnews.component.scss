@@ -1,0 +1,49 @@
+.f-bg {
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 2px #bbb;
+  -moz-box-shadow: 0 1px 2px #bbb;
+  box-shadow: 0 1px 2px #bbb;
+}
+
+li {
+  list-style: none;
+}
+
+.f-bdr {
+  border-top: 1px solid #dfdfdf;
+}
+
+.app-hot-item {
+  position: relative;
+  overflow: hidden;
+  opacity: .9;
+  transition: all .3s;
+  border-radius: 0;
+  background-position: 50%;
+  background-size: cover;
+}
+
+.app-hot-item > .app-hot-wrapper {
+  margin-top: 60.87%;
+}
+
+.app-hot-item > .app-content-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  padding: 6px 10px;
+}
+
+.app-hot-item > .brand {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 70px;
+  line-height: 30px;
+  text-align: center;
+  opacity: .9;
+  color: #fff;
+}

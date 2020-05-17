@@ -1,0 +1,126 @@
+::ng-deep .tree {
+  width: 100%;
+}
+
+::ng-deep .node {
+  cursor: pointer;
+}
+
+::ng-deep .node circle {
+  fill: #888;
+}
+
+::ng-deep .node text {
+  fill: #666;
+  font-size: 14px;
+}
+
+::ng-deep .node path {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 0.2px;
+}
+
+::ng-deep .node0 circle {
+  fill: #aaceff;
+  stroke-opacity: 0.5;
+  stroke: #aaceff;
+  stroke-width: 8px;
+}
+
+::ng-deep .node1 circle {
+  fill: #fd9bb4;
+  stroke: #fd9bb4;
+  stroke-width: 6px;
+}
+
+::ng-deep .node2 circle {
+  fill: #af9ffc;
+  stroke: #af9ffc;
+  stroke-width: 6px;
+}
+
+::ng-deep .node3 circle {
+  fill: #66e297;
+  stroke: #66e297;
+  stroke-opacity: 0.5;
+  stroke-width: 6px;
+}
+
+::ng-deep .node4 circle {
+  fill: #7985f1;
+  stroke: #7985f1;
+  stroke-opacity: 0.5;
+  stroke-width: 6px;
+}
+
+::ng-deep .node5 circle {
+  fill: #e2885c;
+  stroke: #e2885c;
+  stroke-opacity: 0.5;
+  stroke-width: 6px;
+}
+
+::ng-deep .node6 circle {
+  fill: #faa81a;
+  stroke: #faa81a;
+  stroke-opacity: 0.5;
+  stroke-width: 6px;
+}
+
+::ng-deep .node7 circle {
+  fill: #bd73d5;
+  stroke: #bd73d5;
+  stroke-opacity: 0.5;
+  stroke-width: 6px;
+}
+
+::ng-deep .node8 circle {
+  fill: #57d9e2;
+  stroke: #57d9e2;
+  stroke-opacity: 0.5;
+  stroke-width: 6px;
+}
+
+::ng-deep .node9 circle {
+  fill: #f68bfa;
+  stroke: #f68bfa;
+  stroke-opacity: 0.5;
+  stroke-width: 6px;
+}
+
+::ng-deep .node10 circle {
+  fill: #aae246;
+  stroke: #aae246;
+  stroke-opacity: 0.5;
+  stroke-width: 6px;
+}
+
+/*.node.node-child circle {
+    stroke-opacity: 0.5;
+    transform: scale(1.2);
+}*/
+::ng-deep .node:hover text {
+  fill: #333;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+::ng-deep .node:hover circle {
+  transform: scale(1.2);
+}
+
+::ng-deep .node:not(.node3) text {
+  text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+::ng-deep .node0 text {
+  font-size: 16px !important;
+}
+
+::ng-deep .link {
+  fill: none;
+  stroke: #9ecae1;
+  stroke-opacity: 1;
+  stroke-width: 1px;
+}
